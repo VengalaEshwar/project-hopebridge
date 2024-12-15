@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for hopebridege project",
+  "main": "index.js",
+  "scripts": {
+    "start" : "npx nodemon index.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VengalaEshwar/project-hopebridge.git"
+  },
+  "keywords": [
+    "hopebridge"
+  ],
+  "author": "eshwar,vamshi,aravind,sai kumar,pragnith,karthik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VengalaEshwar/project-hopebridge/issues"
+  },
+  "homepage": "https://github.com/VengalaEshwar/project-hopebridge#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "install": "^0.13.0",
+    "nodemon": "^3.1.9"
+  }
+}
