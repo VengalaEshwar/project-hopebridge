@@ -1,0 +1,28 @@
+*{
+  background-image: url("assets/home-bg.avif");
+  background-size: cover; /* Makes the image cover the entire area */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed;
+}
+.body{
+ 
+  
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1%;
+  
+}
+.navbar li{
+   background-color: rgb(59, 244, 59);
+   padding :0.5rem 4rem;
+   border-radius: 1.5rem;
+   font-size: 1.1rem;
+   color: rgb(222, 60, 60);
+   background-image: url("assets/home-bg.avif");
+   background-size: cover; /* Makes the image cover the entire area */
+   background-repeat: no-repeat; /* Prevents tiling */
+   background-attachment: fixed;
+   
+}
