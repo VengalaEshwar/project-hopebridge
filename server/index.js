@@ -1,7 +1,19 @@
-const express = require('express')
-const app = express();
+//imports
+const express = require('express');
 const config = require('./configs/serverConfig');
-//listen methods start the server and run the code in the callback
-app.listen(config.PORT,()=>{
-    console.log(`Server started at port ${config.PORT}`);
-});
+const connectDB = require("./configs/dbConfig")
+//app
+const app = express();
+
+//middlewares
+
+// app.use(cookieParser());
+app.use(express.json());
+app.use(express.text());
+app.use(express.urlencoded({ extended: true }));
+
+//starting the server
+app.listen(config.PORT,async ()=>{
+    await connectDB();
+    console.log("App started at port",config.PORT);
+})

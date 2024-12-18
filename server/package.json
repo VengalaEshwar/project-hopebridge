@@ -4,8 +4,7 @@
   "description": "Server for hopebridege project",
   "main": "index.js",
   "scripts": {
-    "start" : "npx nodemon index.js"
-
+    "start": "npx nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "install": "^0.13.0",
+    "mongoose": "^8.9.1",
     "nodemon": "^3.1.9"
   }
 }

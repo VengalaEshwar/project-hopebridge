@@ -3,10 +3,11 @@ dotenv.config(); //method for starting the .env in the local mission temporarilt
 
 // Here we are exporting all the env variables that the project uses
 module.exports = {
-    PORT: process.env.PORT
+    PORT: process.env.PORT,
+    DB_URL: process.env.DB_URL
 }
+//Eshwar@1617 eshwar // username and pass
 
-// DB_URL: process.env.DB_URL,
 // JWT_SECRET: process.env.JWT_SECRET,
 // JWT_EXPIRY: process.env.JWT_EXPIRY,
 // CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
