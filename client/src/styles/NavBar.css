@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 1px black;
+    padding : 0.8%;
+    align-items : center;
+    height : 10vh;
+    /* box-shadow: offset-x offset-y blur-radius spread-radius color; */
+  
+  }
+  .logo {
+    background-color: aqua; 
+    border-radius: 60%;
+    cursor: pointer;
+  }
+
+  .navbar a{
+     background-color: rgb(59, 244, 59);
+     margin : 0% 10% 0% 0%;
+     padding :0.4rem 1.8rem;
+     border-radius: 1.5rem;
+     font-size: 1.1rem;
+     color: rgb(222, 60, 60);
+     
+  }
+  .donate-button{
+    background-color: rgb(255, 0, 0);
+     margin : 0% 1% 0% 0%;
+     padding :0.4rem 1.8rem;
+     border-radius: 1.5rem;
+     font-size: 1.1rem;
+  }
+  

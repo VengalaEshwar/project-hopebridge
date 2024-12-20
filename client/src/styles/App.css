@@ -1,0 +1,19 @@
+.emergency-button{
+    position: fixed;
+    top : 85vh;
+    left : 88vw;
+    background-color: rgb(255, 0, 0);
+     margin : 0% 10% 0% 0%;
+     padding :0.4rem 1.8rem;
+     border-radius: 1.5rem;
+     font-size: 1.1rem;
+}
+.content-box-main{
+    background-color: rgb(174, 196, 166);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    height : 90vh;
+    width : 100%;
+}
