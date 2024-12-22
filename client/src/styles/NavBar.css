@@ -1,33 +1,59 @@
 .navbar{
+    position:fixed;
+    top : 0;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 0 10px 1px black;
     padding : 0.8%;
+    width : 99%;
     align-items : center;
     height : 10vh;
-    /* box-shadow: offset-x offset-y blur-radius spread-radius color; */
-  
+    background-color: transparent;
+    backdrop-filter: blur(0.3rem); /* Blurs the background */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem 1rem;
+    margin : 0.5%;
+    color : white;
+    z-index: 3;
   }
-  .logo {
-    background-color: aqua; 
-    border-radius: 60%;
-    cursor: pointer;
-  }
-
   .navbar a{
-     background-color: rgb(59, 244, 59);
-     margin : 0% 10% 0% 0%;
-     padding :0.4rem 1.8rem;
+     margin : 0% 5% 0% 0%;
+     padding :0.4rem 1.5rem;
      border-radius: 1.5rem;
      font-size: 1.1rem;
-     color: rgb(222, 60, 60);
-     
+  }
+   .navbar a{
+     margin : 0% 5% 0% 0%;
+     padding :0.4rem 1.5rem;
+     border-radius: 1.5rem;
+     font-size: 1.1rem;
+  }
+  .navbar a:hover
+  {
+    border-radius: 1.5rem;
+    box-shadow: 0 0 10px 1px black;
+  }
+  .active{
+    color: red;
   }
   .donate-button{
+    display: flex;
+    align-items: center;
     background-color: rgb(255, 0, 0);
-     margin : 0% 1% 0% 0%;
+    margin-right :5%;
      padding :0.4rem 1.8rem;
      border-radius: 1.5rem;
      font-size: 1.1rem;
+     color:white;
+     box-shadow: 0 0 10px 1px black;
+  }
+  .donate-button:active,.navbar a:active{
+    background-color: rgb(249, 245, 245); /* Darker red when pressed */
+    transform: scale(0.95); /* Shrinks slightly */
+    box-shadow: 0 0 5px 1px black; /* Adjusts shadow for a pressed effect */
+}
+  .donate-button:hover{
+    background-color: white;
+    color:rgb(255, 0, 0);
   }
   

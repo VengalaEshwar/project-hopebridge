@@ -1,19 +1,22 @@
 import React from 'react'
 import "../styles/NavBar.css"
-import {Link,useNavigate} from 'react-router-dom'
+import {NavLink,useNavigate} from 'react-router-dom'
+import Logo from './Logo';
+import DonateButton from './DonateButton';
 function NavBar() {
     const navigate =  useNavigate();
 
   return (
     <div className='navbar'>
-        <div className="logo" onClick={()=>navigate("/")}> logo</div>
+        <Logo onClick={()=>navigate("/")} />
         <div className="nav-items">
-            <Link to="/">home</Link>
-            <Link to="/adopt">adopt</Link>
-            <Link to="/about">about</Link>
-            <Link to="/blogs">blogs</Link>
+            <NavLink to="/">home</NavLink>
+            <NavLink to="/adopt">adopt</NavLink>
+            <NavLink to="/about">about</NavLink>
+            <NavLink to="/blogs">blogs</NavLink>
         </div>
-        <button onClick={()=>navigate("/donate") } className="donate-button">Donate</button>
+        {/* <button onClick={()=>navigate("/donate") } className="donate-button">Donate</button> */}
+        <DonateButton/>
     </div>
   )
 }

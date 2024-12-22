@@ -17,3 +17,5 @@ app.listen(config.PORT,async ()=>{
     await connectDB();
     console.log("App started at port",config.PORT);
 })
+
+app.get("ping",tempRouter)

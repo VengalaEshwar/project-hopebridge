@@ -9,33 +9,29 @@ import Adoption from './pages/Adoption'
 import Blogs from './pages/Blogs'
 import EmergencyButton from './components/EmergencyButton';
 import Emergency from './pages/Emergency';
+import PageNotFound from './pages/PageNotFound';
+import Temp1 from './pages/Temp1';
+import Temp2 from './pages/Temp2';
 //import styled from 'styled-components'; //used for styling components using css in js
 function App() {
-    const navigate = useNavigate();
-
-    const handleLogoClick = () => {
-      navigate("/"); 
-    };
-
-    useEffect(() => {
-      if (window.location.pathname !== "/") {
-        window.location.pathname = "/";
-      }
-    }, []); //[] -> dependency array it renders if it sees any change of state in the list items
   return (
     <>
       <NavBar/>
       <div className="content-box-main">
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<AboutUs/>}/>
+          <Route path="/about" element={<AboutUs/>}>
+            <Route path="temp1" element={<Temp1/>}/>
+            <Route path="temp2" element={<Temp2/>}/>
+          </Route>
           <Route path="/adopt" element={<Adoption/>}/>
           <Route path="/blogs" element={<Blogs/>}/>
           <Route path="/donate" element={<Donate/>}/>
           <Route path="/emergency" element={<Emergency/>}/>
+          <Route path="*" element={<PageNotFound/>}/>
         </Routes>
+        {/* <EmergencyButton/> */}
       </div>
-      <EmergencyButton/>
     </>
   )
 }
