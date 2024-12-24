@@ -72,14 +72,69 @@
   }
 }
 /* _______________________________________________footer-middle___________________________________________________ */
-/* .home-middle{
-    height : 300vh;
-   } */
+.home-middle{
+
+    width : 100%;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-items: center;
+    background-color:aliceblue;
+    background-image: url("../../public/images/temp.jpg");
+    background-position: center;
+    background-size: cover;
+   }
+   .home-middle h1 {
+    font-size: 3rem;
+    text-align :center;
+    padding : 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color : rgb(5, 37, 117);
+    text-shadow: 0px 1px 1px rgba(0, 0, 0);
+   }
+    .work-layout{
+      margin : 2% auto 1%;
+      width : 70%;
+      height : 70vh;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      /* background-color: blue; */
+      gap : 2rem;
+    }
+    .work-card {
+      display: flex;
+      width: 20rem;
+      height: 7rem;
+      box-shadow: 
+          0 4px 6px rgba(0, 0, 0, 0.4),  /* Main soft shadow */
+          0 1px 3px rgba(255, 255, 255, 0.6); /* Slight white glow for 3D effect */
+      border-radius: 0.5rem;
+      align-items: center;
+      padding: 1rem;
+      font-size: 1.3rem;
+      cursor:pointer;
+  }
+  .work-card:hover{
+    transform: scale(1.1);
+  }
+    .work-card-img{
+      height : 4rem;
+      width : 4rem;
+      margin : 1rem;
+    }
+    .work-card-img i{
+      font-size: 3rem;
+      color:rgb(208, 92, 92);
+      background-image: ;
+      font-weight: 100;
+    }
 /* _______________________________________________footer-banner___________________________________________________ */
 .home-footer-banner {
   height: 70vh;
   width: 100%;
-  background-color: rgb(239, 147, 35);
+  background-color: #ed7f7f;
   display: flex;
 }
 .home-footer-banner-context-div {
