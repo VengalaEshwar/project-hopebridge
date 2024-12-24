@@ -136,6 +136,9 @@ function Home() {
           <button>join us</button>
         </div>
       </div>
+      {/* <div class="bg-red-500 text-white p-4">
+  If this text has a red background, Tailwind is working!
+</div> */}
       <div className="footer">
         
       </div>

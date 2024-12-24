@@ -3,8 +3,8 @@
     background-size: contain; /* Ensures the image fits within the container without distortion */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */
-    height: 10vh; /* Sets the height relative to the viewport */
-    width: 10vh; /* Makes it a square container proportional to the height */
+    height: 4rem; /* Sets the height relative to the viewport */
+    width: 4rem; /* Makes it a square container proportional to the height */
 }
 .logo-div{
     width : auto;
@@ -15,4 +15,15 @@
     font-weight: 900;
     color : rgb(245, 71, 71);
     cursor: pointer;
+}
+
+@media(max-width: 576px)
+{
+    .logo{
+        height: 2rem; /* Sets the height relative to the viewport */
+        width: 2rem;
+    }
+    .logo-div{
+        font-size: 1.3rem;
+    }
 }
