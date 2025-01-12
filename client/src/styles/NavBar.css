@@ -14,7 +14,7 @@
     border-radius: 1rem 1rem;
     margin : 0.5%;
     /* color : rgb(255, 255, 255); */
-    z-index: 3;
+    z-index: 10;
   }
 .nav-items{
   /* background-color: aqua; */
@@ -40,7 +40,7 @@
   .active{
     color: red;
   }
-  .donate-button{
+  .donate-button,.emergency-button{
     display: flex;
     align-items: center;
     background-color: rgb(255, 0, 0);
@@ -55,6 +55,10 @@
     background-color: rgb(249, 245, 245); /* Darker red when pressed */
     transform: scale(0.95); /* Shrinks slightly */
     box-shadow: 0 0 5px 1px black; /* Adjusts shadow for a pressed effect */
+}
+.emergency-button:active{
+  transform: scale(0.95);
+  box-shadow: 0 0 5px 1px black;
 }
   .donate-button:hover{
     background-color: white;

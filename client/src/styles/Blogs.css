@@ -1,0 +1,111 @@
+.blogs-out{
+    width:100%;
+    height:auto;
+    background-color: rgb(249,245,236);
+}
+.blogs-header{
+    width : 100%;
+    height : 60svh;
+    background-image : url("images/blogBg.jpg");
+    background-size: cover;
+}
+.blogs-layout{
+    margin: 10%;
+    margin-bottom: 0%;
+    margin-top:5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog{
+    height:27rem;
+    width : 20rem;
+    background-color: rgb(221, 217, 211);
+    margin-bottom: 5rem;
+    margin-right: 1rem;
+    border-color: rgb(174, 167, 167);
+    border-width: 1px;
+    cursor:pointer;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px 2px  rgb(174, 167, 167);
+}
+.blog-content{
+    width:100%;
+    height:50%;
+    padding:1rem;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.blog-content::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+.blog img{
+    width:100%;
+    height:50%;
+    border-color: black;
+}
+.blog-title{
+    font-size: 1.5rem;
+    color:red;
+}
+.blog:hover{
+    transform: scale(1.01);
+}
+.blog-end{
+    background-image: url("/images/parents.jpg");
+    width:100vw;
+    height:100svh;
+    background-color: aquamarine;
+    background-size: cover;
+    background-position: center;
+}
+.blog-add-btn {
+    margin-top:5rem;
+    text-align : end;
+    margin-right:1rem;
+}
+.blog-add-btn button{
+    background-color: rgb(46, 46, 46);
+    font-size: 1.5rem;
+    color: white;
+    padding:0.6rem 3rem;
+    box-shadow: 0px 0px 2px 1px  rgb(46, 46, 46);
+}
+.blog-add-btn button:active{
+    transform: scale(0.97);
+}
+@media(max-width: 768px){
+    .blogs-in-title{
+    box-shadow: 0px 0px 5px 1px black;
+    margin : 0% 0%;
+    font-size:2rem;
+    }
+    .blogs-layout{
+        margin: 1%;
+        margin-left:5%;
+        margin-bottom: 0%;
+        margin-top:5%;
+        justify-content: space-between;
+    }
+    .blog-add-btn button{
+        font-size: 1rem;
+        padding:0.3rem 1rem;
+    }
+    .blogs-in{
+        padding : 1rem;
+        padding-top : 10vh;
+
+    }
+    .blog{
+        width:auto;
+    }
+    
+    .blog-end{
+        height:22vh;
+    }
+    .blog-add-btn{
+        margin-top:1rem;
+        text-align : end;
+        margin-right:0rem;
+    }
+}

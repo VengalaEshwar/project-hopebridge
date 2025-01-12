@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/Home.css";
 import WorkCard from "../components/WorkCard";
+import Footer from "../components/Footer";
+import EmergencyButton from "../components/EmergencyButton";
 function Home() {
   return (
     <div className="home">
@@ -12,9 +14,6 @@ function Home() {
       <div className="home-middle">
         <h1 >It is our mission to help those in crisis by :</h1>
         <div className="work-layout">
-        <WorkCard/>
-        <WorkCard/>
-        <WorkCard/>
         <WorkCard/>
         <WorkCard/>
         <WorkCard/>
@@ -41,12 +40,8 @@ function Home() {
           <button>join us</button>
         </div>
       </div>
-      {/* <div class="bg-red-500 text-white p-4">
-  If this text has a red background, Tailwind is working!
-</div> */}
-      <div className="footer">
-        
-      </div>
+      <Footer/>
+      <EmergencyButton/>
     </div>
   );
 }

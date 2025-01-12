@@ -8,3 +8,5 @@
 7> Create Required routing of pages using 'react-router-dom' #[note : npm install react-router-dom]
 8> first step of routing is wrap the App component in the main.jsx into BrowserRoter which enable the routing in the application
 9> create the routes and and wrap them in the Routes component 
+10> designed the home page
+11> designed the blog page
