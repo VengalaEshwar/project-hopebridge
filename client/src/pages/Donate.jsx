@@ -10,6 +10,7 @@ function Donate() {
     console.log("clicked donate button");
     setShowDonation(!showDonation)
   }
+
   const [showDonation,setShowDonation]= useState(false);
   return (
     <>

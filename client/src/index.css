@@ -6,3 +6,15 @@
     scrollbar-width: none;
 }
 
+/* 
+@media (max-width: 768px) {
+    html {
+        font-size: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px; 
+    }
+} */

@@ -1,0 +1,111 @@
+.error-page {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    padding: 1rem; /* Added padding for better spacing on smaller screens */
+}
+
+.error-page-right {
+    background-image: url(images/donate-middle.png);
+    height: 100%;
+    width: 40rem;
+    background-position: center;
+    background-size: cover;
+    margin: 1rem; /* Added margin to avoid overlapping on smaller screens */
+}
+
+.error-page-left {
+    height: 100%;
+    width: 40rem;
+    text-align: center; /* Center-align content for better presentation on smaller screens */
+}
+
+.error-404 {
+    font-size: 5rem;
+    color: rgb(255, 87, 87);
+    margin: 1rem 0; /* Added margin for spacing */
+}
+
+.error-404-some {
+    font-size: 3rem;
+    color: rgb(255, 87, 87);
+    margin-bottom: 1rem; /* Added spacing below */
+}
+
+.error-page p {
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: 400;
+    padding-right: 10rem;
+    color: rgb(79, 76, 76);
+}
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .error-page {
+        height: auto; /* Adjust height for smaller screens */
+        margin-top: 5%;
+    }
+
+    .error-page-left,
+    .error-page-right {
+        width: 30rem; /* Reduce width on medium screens */
+    }
+
+    .error-404 {
+        font-size: 4rem; /* Reduce font size */
+    }
+
+    .error-404-some {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+
+    .error-page p {
+        font-size: 1.8rem; /* Reduce font size */
+        padding-right: 5rem; /* Reduce padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .error-page {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto;
+    }
+
+    .error-page-left,
+    .error-page-right {
+        width: 100%; /* Full width for small screens */
+    }
+
+    .error-404 {
+        font-size: 3rem;
+    }
+
+    .error-404-some {
+        font-size: 2rem;
+    }
+
+    .error-page p {
+        font-size: 1.5rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-404 {
+        font-size: 2.5rem;
+    }
+
+    .error-404-some {
+        font-size: 1.8rem;
+    }
+
+    .error-page p {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+}

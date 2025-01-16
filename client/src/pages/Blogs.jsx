@@ -7,9 +7,7 @@ function Blogs() {
   const [isBlogForm,setIsBlogForm] = useState(false);
   const BlogLayout = ()=>{
     return(
-      <><div className="blog-add-btn" >
-      <button onClick={()=>{navigate("/blogs/form");setIsBlogForm(!isBlogForm)
-      }}><i className="fa-solid fa-bookmark"></i>&nbsp;&nbsp;Add Blog</button></div>
+      <>
     <div className="blogs-layout">
       <Blog/>
       <Blog/>
@@ -34,6 +32,9 @@ function Blogs() {
   return (
     <div className="blogs-out">
         <div className="blogs-header"></div>
+        <div className="blog-add-btn" >
+      <button onClick={()=>{navigate("/blogs/form");setIsBlogForm(!isBlogForm)
+      }}>{!isBlogForm?(<><i className="fa-solid fa-bookmark"></i>&nbsp;&nbsp;Add Blog</>):<>Back</>}</button></div>
         {isBlogForm?<Outlet/>:<BlogLayout/>}
       <div className="blog-end"></div>
     </div>
