@@ -13,6 +13,10 @@ const blogSchema = new mongoose.Schema({
   createdAt: { type: Date,
     default: Date.now 
 },
+  photo : {
+    type : String,
+    required : true
+  },
   updatedAt: {
     type: Date, 
     default: Date.now 

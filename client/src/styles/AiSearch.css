@@ -1,0 +1,24 @@
+.ai-search-grid{
+    width: 100%;
+    height : 80vh;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+}
+.ai-search-grid div{
+    padding : 2rem;
+    overflow: scroll;
+}
+.ai-input-box{
+    width : 100%;
+    resize: none;
+    background-color: #F5F7F8;
+    border-radius: 1rem;
+    box-shadow: 0 0  7px 1px #a3a5a6;
+    padding: 1rem;
+    margin-top: 2rem;
+    height : 20rem
+}
+.ai-input-box:focus {
+    box-shadow: 0 0 7px 2px black; 
+    outline: none; 
+}

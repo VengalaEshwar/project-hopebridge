@@ -15,11 +15,13 @@ import Temp2 from "./pages/Temp2";
 import SideBar from "./components/SideBar";
 import Children from "./pages/Children";
 import AiSearch from "./pages/AiSearch";
+import BlogForm from "./components/BlogForm";
+import Orphanges from "./pages/Orphanges";
 //import styled from 'styled-components'; //used for styling components using css in js
 function App() {
   return (
     <>
-      <SideBar/>
+      <SideBar />
       <NavBar />
       <div className="content-box-main">
         <Routes>
@@ -29,11 +31,14 @@ function App() {
             <Route path="temp2" element={<Temp2 />} />
           </Route>
           <Route path="/adopt" element={<Adoption />} />
-          <Route path="/ai-search" element={<AiSearch/>} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/ai-search" element={<AiSearch />} />
+          <Route path="/blogs" element={<Blogs />}>
+            <Route path="form" element={<BlogForm />} />
+          </Route>
           <Route path="/donate" element={<Donate />} />
+          <Route path="/orphanage" element={<Orphanges />} />
           <Route path="/emergency" element={<Emergency />} />
-          <Route path="/children" element={<Children/>} />
+          <Route path="/children" element={<Children />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

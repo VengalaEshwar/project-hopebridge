@@ -1,0 +1,93 @@
+/* Emergency.css */
+
+.emergency-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-top : 5rem;
+  }
+  
+  .emergency-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #d9534f;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+    color: #5bc0de;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .section ul li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .chat-button, .info-button, .volunteer-button, .resources-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .chat-button {
+    background-color: #5cb85c;
+    color: #fff;
+  }
+  
+  .chat-button:hover {
+    background-color: #4cae4c;
+  }
+  
+  .info-button {
+    background-color: #0275d8;
+    color: #fff;
+  }
+  
+  .info-button:hover {
+    background-color: #025aa5;
+  }
+  
+  .volunteer-button {
+    background-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .volunteer-button:hover {
+    background-color: #ec971f;
+  }
+  
+  .resources-button {
+    background-color: #d9534f;
+    color: #fff;
+  }
+  
+  .resources-button:hover {
+    background-color: #c9302c;
+  }
+  

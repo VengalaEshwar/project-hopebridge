@@ -5,7 +5,7 @@
   height: 100%;
 }
 .title-card {
-  background-image: url("../../public/images/titlehome.jpg");
+  background-image: url("images/titlehome.jpg");
   /* Ensures the image fits within the container without distortion */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center;
@@ -81,7 +81,7 @@
     align-items: space-around;
     justify-items: center;
     background-color:aliceblue;
-    background-image: url("../../public/images/temp.jpg");
+    background-image: url("images/temp.jpg");
     background-position: center;
     background-size: cover;
    }
@@ -194,7 +194,7 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .home-footer-banner-img {
-  background-image: url("../../public/images/footerbanner.jpg");
+  background-image: url("images/footerbanner.jpg");
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center;
   background-size: cover;

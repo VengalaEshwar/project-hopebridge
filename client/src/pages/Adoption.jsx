@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Adoption.css";
 import { Outlet, useNavigate } from "react-router-dom";
+import Gallery from "../components/Gallery";
+import AdoptionForm from "../components/AdoptionForm";
 const Temp = () => (
   <div className="adopt-content-box-popup">
     <h1>Lorem ipsum dolor sit amet consectetur Eshwar elit</h1>
@@ -20,6 +22,7 @@ const Temp = () => (
   </div>
 );
 const Adoption = () => {
+  const [adoptForm,setAdoptForm]= useState(false);
   const navigate = useNavigate();
   return (
     <>
@@ -84,31 +87,13 @@ const Adoption = () => {
             soluta iusto exercitationem laboriosam, dolores enim totam ratione
             quasi non, ipsam beatae provident cupiditate voluptate nemo!
           </p>
-          <button className="adopt-page-button">Application Form</button>
+          <button className="adopt-page-button"  onClick={()=>{
+            setAdoptForm(!adoptForm)
+          }}>Application Form</button>
         </div>
       </div>
-      
-     <div className="adopt-gallary-box">
-      <h1 className="text-center text-7xl p-5">Gallery</h1>
-     <div className="adopt-gallary">
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/hands.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/adopt-header.jpg" alt="" />
-      <img src="images/hands.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/adopt-header.jpg" alt="" />
-      <img src="images/hands.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/adopt-header.jpg" alt="" />
-      <img src="images/hands.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/adopt-header.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      <img src="images/child-1.jpg" alt="" />
-      </div>
-     </div>
+      {adoptForm?<AdoptionForm/>:null}
+    <Gallery isDonor={false}/>
      <div className="adopt-footer">
      ♡HAPPY FAMILY♡
      </div>

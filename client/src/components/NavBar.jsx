@@ -15,6 +15,7 @@ function NavBar() {
             <NavLink to="/">home</NavLink>
             <NavLink to="/adopt">adopt</NavLink>
             <NavLink to="/blogs">blogs</NavLink>
+            <NavLink to="/orphanage">orphange</NavLink>
             <NavLink to="/about">about</NavLink>
         </div>
         {/* <button onClick={()=>navigate("/donate") } className="donate-button">Donate</button> */}

@@ -1,5 +1,5 @@
 .logo {
-    background-image: url("../../public/images/logo.png");
+    background-image: url("images/logo.png");
     background-size: contain; /* Ensures the image fits within the container without distortion */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center; /* Centers the image */

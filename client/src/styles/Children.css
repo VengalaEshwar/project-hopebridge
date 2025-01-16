@@ -1,36 +1,37 @@
-.children-layout-out{
-    height: 100%;
-    width: 100%;
-    background-color:#ffffff;
+.child-card{
+  display : flex;
+  padding : 2rem;
+  gap : 5rem;
+  flex-wrap: wrap;
+  max-width : 80rem;
+  background-color: #F5F7F8;
+  border-radius: 1rem;
+  box-shadow: 0 0  7px 1px #a3a5a6;
+  margin-bottom: 5rem;
+  justify-content: center;
+  margin : 5rem auto;
+  overflow: scroll;
 }
-.children-layout-in{
-    /* background-color: rgb(239, 244, 244); */
-    height: 100%;
-    padding-top:4rem;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.child-card-photo{
+  height : 20rem;
+  width : 20rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
 }
-.child{
-    background-color: rgb(244, 248, 247);
-    margin:5%;
-    width:85%;
-    height:30rem;
-    box-shadow: 0 0 5px 1px black;
+.child-layout{
+  width : 100%;
+  padding : 2rem;
 }
-.child:hover{
-    background-color: rgb(227, 238, 235);
-    transform: scale(1.01);
+.child-details{
+  flex-grow: 1;
+  display: flex;
 }
-@media(min-width :768px)
-{
-    .child{
-        height:20rem;
-        margin-top:0.1rem;
-        width:90%;
-    }
-    .children-layout-in{
-        padding-top:10rem;
-    }
+.child-details ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 0.8;
+}
+.child-details ul li{
+  padding : 0.5rem;
 }
