@@ -26,10 +26,7 @@ function App() {
       <div className="content-box-main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />}>
-            <Route path="temp1" element={<Temp1 />} />
-            <Route path="temp2" element={<Temp2 />} />
-          </Route>
+          <Route path="/about" element={<AboutUs />}/>
           <Route path="/adopt" element={<Adoption />} />
           <Route path="/ai-search" element={<AiSearch />} />
           <Route path="/blogs" element={<Blogs />}>

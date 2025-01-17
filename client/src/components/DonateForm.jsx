@@ -7,6 +7,7 @@ function DonateForm() {
     amount: "",
     type: "global",
     orphanageId: "",
+    comment :""
   });
 
   const [showPaymentOptions, setShowPaymentOptions] = useState(false);
@@ -127,6 +128,17 @@ function DonateForm() {
               />
             </div>
           )}
+          <div className="form-group">
+              <label htmlFor="comment">Comments</label>
+              <input
+                type="text"
+                id="comment"
+                name="comment"
+                value={formData.comment}
+                onChange={handleChange}
+                placeholder="Enter comments"
+              />
+            </div>
 
           <button type="submit" className="submit-button">Donate</button>
         </form>

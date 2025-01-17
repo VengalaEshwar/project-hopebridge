@@ -1,22 +1,67 @@
-import React from 'react'
+import React from "react";
 
 function OrphanageHome() {
   return (
-    <div className='orphange-home-layout'>
-      <div className='orphange-home-layout-left'>
-        <img src="images/temp.jpg" alt="" />
+    <div className="orphange-home-layout">
+      <div className="orphange-home-layout-left">
+        <img src="images/child-1.jpg" alt="" />
       </div>
-      <div className='orphange-home-layout-right'>
+      <div className="orphange-home-layout-right">
         <ul>
-          <li><b>Orphanage Name :</b> Hope Bridge</li>
-          <li><b>Orphanage Name :</b> Hope Bridge</li>
-          <li><b>Orphanage Name :</b> Hope Bridge</li>
-          <li><b>Orphanage Name :</b> Hope Bridge</li>
-          <li><b>Orphanage Name :</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto cumque tempore perferendis veritatis amet recusandae praesentium culpa eveniet dolor officiis alias saepe sequi, neque aut mollitia iure incidunt molestiae hic minima eaque itaque, distinctio rerum! Illo deleniti vero possimus, temporibus, quibusdam quis a dolorem earum adipisci repudiandae quo esse dignissimos omnis natus, accusantium laboriosam nisi ea necessitatibus ipsa officia pariatur fugiat enim eligendi ratione? Iusto non et voluptates ipsam sequi cupiditate reiciendis. In enim pariatur rem deleniti hic quidem sequi distinctio doloremque, maiores minima doloribus quibusdam sunt, illum alias repellat exercitationem molestiae placeat nobis cupiditate ut reprehenderit ad iste fuga.</li>
+          <li>
+            <b>Orphanage Name :</b> Hope Bridge
+          </li>
+          <li>
+            <b>Location :</b> Hyderabad
+          </li>
+          <li>
+            <b>No of Children :</b> 100
+          </li>
+          <li>
+            <b>Year of Establishment :</b> 2024
+          </li>
+          <li>
+            <b>email :</b>eshwarvengala30@gmail.com
+          </li>
+          <li>
+            <b>Phone no :</b>8688496180
+          </li>
+          <li>
+            <b>About us  </b>
+            <br />
+            <p className="p-4 text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+              modi repellat perspiciatis soluta maiores explicabo officia
+              tempore recusandae! Perspiciatis rem voluptatem inventore
+              provident sunt corrupti quisquam nulla natus, obcaecati voluptatum
+              ad recusandae quaerat illo hic voluptas tempora autem nisi
+              accusamus alias sapiente iusto! Quaerat iste tempora dolore
+              repudiandae recusandae eaque alias accusantium ut, aut non
+              adipisci eligendi. Nesciunt distinctio quibusdam quis, adipisci
+              culpa minus unde consequuntur sed soluta repellendus minima
+              sapiente nemo porro nisi doloremque itaque expedita, ex debitis
+              incidunt corporis officiis? Aperiam consectetur necessitatibus
+              sunt saepe illum perspiciatis voluptatum omnis? Quibusdam, magni
+              minima autem, cupiditate delectus ab laboriosam provident, animi
+              ducimus vero eos consequuntur cum esse. Provident consequuntur
+              deserunt mollitia reprehenderit ducimus iste nobis soluta itaque
+              temporibus dolorem maiores, ipsa vel recusandae harum commodi in
+              nulla nam excepturi, optio obcaecati quod vero vitae saepe? Ea
+              esse excepturi delectus, corrupti consequuntur nisi nemo labore
+              explicabo mollitia exercitationem odio quibusdam soluta,
+              reiciendis culpa quaerat! Quisquam quo aliquid iusto assumenda
+              saepe, voluptatibus eum cupiditate, quam nesciunt unde libero
+              neque voluptatum iure laboriosam voluptatem eaque dolorum, a
+              necessitatibus quasi eos praesentium enim exercitationem? Autem
+              nisi dolor non. Cupiditate quia, eos consequuntur sunt, rerum
+              laborum similique repudiandae nulla doloremque nam architecto,
+              temporibus at cumque.
+            </p>
+          </li>
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default OrphanageHome
+export default OrphanageHome;

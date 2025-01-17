@@ -64,3 +64,72 @@
     width : 45rem;
     height : 10rem;
 }
+.orphange-home-layout-right ul{
+    font-size: 1.3rem;
+    padding : 1rem;
+}
+.orphange-home-layout-right ul li {
+    margin-bottom: 1rem;
+}
+.orphange-home-layout-right ul li b{
+    color : red;
+}
+.orphanage-application-layout{
+    margin-top: 5rem;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+.application{
+    width : 90%;
+    min-height : 5rem;
+    background-color: #edf3ed;
+    margin : 1rem;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0,0.3);
+    font-size : 1.2rem;
+    padding : 1rem;
+    flex-wrap :wrap;
+}
+.applicant-name,.child-id,.applicant-mail{
+    flex-grow :1;
+}
+
+/* Transaction */
+.orphanage-transaction {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .transaction {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .transaction p {
+    margin: 5px 0;
+  }
+  
+  .transaction strong {
+    color: #333;
+  }
+.photo-layout{
+    width:100%;
+    height : 100%;
+    padding : 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}  
+.photo-layout img{
+    height : 20rem;
+    width : 20rem;
+    margin : 2rem;
+    border-radius: 1rem;
+}
