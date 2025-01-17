@@ -9,7 +9,7 @@ import OrphanageTransaction from "../components/OrphanageTransaction";
 import OrphanageGallery from "../components/OrphanageGallery";
 import Emergency from "./Emergency.jsx";
 function Orphanges() {
-  const navList = ["Home","Children","Add Child","Applications","Transactions","Gallery","Emergency"]
+  const navList = ["Home","Children","Add Child","Applications","Transactions","Gallery","Emergency",]
   const [currentTab ,setCurrentTab]=useState(0);
   // This code related to Children Tab
   let childs = []
@@ -34,7 +34,15 @@ function Orphanges() {
               {val}
           </NavLink>
         )} 
-        <img src="images/logo.png" alt="" />
+        <div className="hidden max-md:block w-full">
+          <NavLink 
+            to="*" 
+            className="active:scale-95 " 
+            >
+              Show All
+        </NavLink></div>
+        
+        {/* <img src="images/logo.png" alt="" /> */}
         </div>
         <div className="orphanages-container-right">
           {orphanageTabs[currentTab]}

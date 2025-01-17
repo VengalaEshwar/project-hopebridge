@@ -1,5 +1,4 @@
-.adopt-out {
-    width: 100vw;
+.adopt {
     height: auto;
     background-color: rgb(249, 245, 236);
   }
@@ -10,20 +9,22 @@
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 60svh;
+    height: 28rem;
   }
   /* ________________________________adopt content box______________________________________________________ */
   .adopt-content-box {
     width: 100%;
-    height: 70svh;
-    background-color: rgb(249, 245, 236);
+    height: auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   /* ________________________________adopt content box left______________________________________________ */
   .adopt-content-box-left {
-    width: 60%;
+    width: 50rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 3rem;
+    text-align: center;
   }
   
   .adopt-content-box-left h1 {
@@ -33,19 +34,16 @@
   .adopt-content-box-left p {
     padding-top: 4rem;
     font-size: 1.5rem;
+    text-align: justify;
   }
     /* ________________________________adopt content box right______________________________________________ */
   .adopt-content-box-right {
-    width: 50%;
-    overflow: visible;
+    width: 45rem;
+    height : 35rem;
+    margin : auto;
   }
   
-  .adopt-content-box-right-img1,
-  .adopt-content-box-right-img2,
-  .adopt-content-box-right-img3,
-  .adopt-content-box-right-img4,
-  .adopt-content-box-right-img5,
-  .adopt-content-box-right-img6 {
+  .adopt-content-box-right >* {
     position: relative;
     border-radius: 50%;
     width: 17rem;
@@ -55,6 +53,7 @@
     background-size: cover;
     border-color: rgb(255, 255, 255);
     border-width: 0.8rem;
+    transition:all 0.5s ease-in-out;
   }
   
   .adopt-content-box-right-img1 {
@@ -111,69 +110,60 @@
   }
   
 
-  .adopt-content-box-right-img1:hover,
-  .adopt-content-box-right-img2:hover,
-  .adopt-content-box-right-img3:hover,
-  .adopt-content-box-right-img4:hover,
-  .adopt-content-box-right-img5:hover,
-  .adopt-content-box-right-img6:hover {
+  .adopt-content-box-right>*:hover {
     transform: scale(1.01); 
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); 
     cursor: pointer; 
     z-index: 8;
   }
-  .adopt-content-box-right-img1,
-    .adopt-content-box-right-img2,
-    .adopt-content-box-right-img3,
-    .adopt-content-box-right-img4,
-    .adopt-content-box-right-img5,
-    .adopt-content-box-right-img6{
-        transition:all 0.5s ease-in-out;
-
-    }
       /* ________________________________adopt-content-box-popup______________________________________________ */
 
   .adopt-content-box-popup-box{
-    max-width:100%;
     height : auto;
-    padding : 5rem;
+    margin : auto;
   }
-  .adopt-content-box-popup{
+  .adopt-content-box-popup {
+    max-width: 80%;
     background-color: beige;
-    padding : 1rem 4rem;
+    padding: 1rem 4rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 1rem;
     text-align: justify;
-    margin: 3rem 6rem;
-    transition: height 2s;
+    margin: 3rem auto;
     cursor: pointer;
     box-shadow: 1px 2px 10px 2px black;
-  }
-  .adopt-content-box-popup h1{
-      font-size: 2.5rem;
-      text-align: center;
-  }
-  .adopt-content-box-popup p{
+    overflow: hidden; /* Ensures content stays hidden when collapsed */
+    transition: max-height 1s ease-in-out; /* Smoothly animates height change */
+    max-height: 5.5rem; /* Initial collapsed height */
+}
+
+.adopt-content-box-popup h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.adopt-content-box-popup p {
     font-size: 1.3rem;
-    display:none;
-    transition: all 0.5s ease-out allow-discrete;
-  }
-  .adopt-content-box-popup:hover p {
-    display: block;
-  }
+    margin-top: 1rem;
+    visibility: hidden;
+}
+
+.adopt-content-box-popup:hover {
+    max-height: 50rem; /* Adjust to the desired expanded height */
+}
+.adopt-content-box-popup:hover p {
+  visibility: visible;
+} 
   /* ________________________________adopt-content-box-buttons______________________________________________ */
   .adopt-content-box-buttons  {
-    width : 100%;
     height : auto;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
   }
   .adopt-content-box-buttons > * {
-    height:15rem;
-    overflow: scroll;
+    height:17em;
     padding : 1rem;
-    max-width:33.333%;
+    width:33.333%;
   }
   .adopt-content-box-buttons-1{
     background-color: #A6AEBF;
@@ -194,7 +184,7 @@
     width : 17rem;
     background-color: #FFD65A;
     margin : 0 6rem;
-    padding : 0.7rem 2rem;
+    padding : 0.7rem 1rem;
     font-size: 1.2rem;
     box-shadow: 0 0 6px 1px black;
   }
@@ -222,7 +212,7 @@
     width : auto;
    }
    .adopt-footer{
-    height :96vh;
+    height :42rem;
     width : 100%;
     background-image: url("images/parents.jpg");
     font-size: 5rem;
@@ -233,7 +223,7 @@
     background-size: cover;
    }
 
-    /* ________________________________MAdoption form______________________________________________ */
+    /* ________________________________Adoption form______________________________________________ */
     .adoption-form-container {
       max-width: 600px;
       margin: 2rem auto;
@@ -303,4 +293,187 @@
     /* ________________________________Mobile responsive______________________________________________ */
 
   /* Media Queries for Shorter Screens */
+  @media(max-width : 1024px) {
+    .title-card-adopt{
+      height : 20rem;
+    }
+    .adopt-content-box-left h1 {
+      font-size: 2rem;
+    }
+    
+    .adopt-content-box-left p {
+      padding-top: 4rem;
+      font-size: 1rem;
+    }
+    .adopt-content-box-popup h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    
+    .adopt-content-box-popup p {
+      font-size: 1rem;
+      margin-top: 1rem;
+  }
+  .adopt-content-box-popup h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .adopt-content-box-popup p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+/* ________________________________________pop ups in content box______________________________________ */
+.adopt-content-box-popup h1 {
+  font-size: 1.1rem;
+  color: #ff9500;
+  text-align: center;
+}
+
+.adopt-content-box-popup p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.adopt-content-box-popup{
+  max-height : 4rem;
+}
+
+}
+@media(max-width : 1230px) {
+  .adopt-content-box-popup h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin:0;
+  }
+  .adopt-content-box-popup {
+    padding: 1rem;
+  }
+  .adopt-content-box-popup p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+/* ________________________________________Adoption content box buttons______________________________________ */
+.adopt-content-box-buttons{
+  height : auto;
+}
+.adopt-content-box-buttons > *{
+  height : auto;
+}
+.adopt-content-box-buttons > * h1{
+  font-size: 1.5rem;
+}
+.adopt-content-box-buttons > * p{
+  padding : 0.5rem
+}
+.adopt-page-button{
+  width : 12rem;
+  background-color: #FFD65A;
+  margin : 0 5rem;
+  padding : 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 0 6px 1px black;
+}
+}
+  @media(max-width : 768px) {
+
+
+     /* ________________________________________adopt-content-box______________________________________ */
+     .adopt-content-box-right{
+       height : 20rem;
+      }
+      .adopt-content-box-right-img1 {
+        width: 10rem;
+        height: 10rem;
+        right: 1rem;
+        bottom: 1rem;
+      }
+      
+      .adopt-content-box-right-img2 {
+        width: 5rem;
+        height: 5rem;
+        right: -0.6rem;
+        bottom: 6rem;
+      }
+      
+      .adopt-content-box-right-img3 {
+        width: 10rem;
+        height: 10rem;
+        left: 10rem;
+        bottom: 17rem;
+      }
+      
+      .adopt-content-box-right-img4 {
+        width: 6rem;
+        height: 6rem;
+      left: 6rem;
+      bottom: 28rem;
+    }
+    
+    .adopt-content-box-right-img5 {
+      width: 5rem;
+      height: 5rem;
+      left: 10.5rem;
+      bottom: 40rem;
+    }
+    
+    .adopt-content-box-right-img6 {
+      width: 5.5rem;
+      height: 5.5rem;
+      left: 16rem;
+      bottom: 47rem;
+    }
+    /* ________________________________________pop ups in content box______________________________________ */
+    .adopt-content-box-popup h1 {
+      font-size: 1.1rem;
+      color: #ffa600;
+      text-align: center;
+    }
+    .adopt-content-box-popup p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .adopt-content-box-popup{
+      max-height : 4rem;
+    }
+    /* ________________________________________Adoption content box buttons______________________________________ */
+    .adopt-content-box-buttons{
+      flex-direction: column;
+      height : auto;
+    }
+    .adopt-content-box-buttons > *{
+      width : 100%;
+      height : auto;
+    }
+    .adopt-content-box-buttons > * h1{
+      font-size: 1.5rem;
+    }
+    .adopt-content-box-buttons > * p{
+      padding : 0.5rem
+    }
+    .adopt-page-button{
+      width : 12rem;
+      background-color: #FFD65A;
+      margin : 0 5rem;
+      padding : 0.5rem;
+      font-size: 1rem;
+      box-shadow: 0 0 6px 1px black;
+    }
+    /* ________________________________________Adoption Gallery______________________________________ */
+    
+    .adopt-gallary{
+      height : 15rem;
+     }
+     .adopt-footer{
+      height :12rem;
+      width : 100%;
+      background-image: url("images/parents.jpg");
+      font-size: 1rem;
+      text-align: center;
+      color:rgb(228,195,180);
+      background-repeat: no-repeat;
+      background-position:center;
+      background-size: cover;
+     }
+  
+  }
   

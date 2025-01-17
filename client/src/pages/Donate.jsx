@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Donation.css";
 import DonateFeatureCard from "../components/DonateFeatureCard";
@@ -6,15 +6,16 @@ import Gallery from "../components/Gallery";
 import DonateForm from "../components/DonateForm";
 function Donate() {
   const navigate = useNavigate();
-  const handleDonateClick = ()=>{
+  const handleDonateClick = () => {
     console.log("clicked donate button");
-    setShowDonation(!showDonation)
-  }
+    setShowDonation(!showDonation);
+  };
 
-  const [showDonation,setShowDonation]= useState(false);
+  const [showDonation, setShowDonation] = useState(false);
   return (
-    <>
-      <div className="donation-header"></div>
+    <div className="donate">
+      <div className="donation-header" />
+
       <div className="donation-need-container">
         <h1>Donate to OrphanCare to Help us Nurture our Children</h1>
         <div className="donate-need-image" />
@@ -33,6 +34,8 @@ function Donate() {
           happy, healthy futures.
         </p>
       </div>
+
+      
       <div className="donate-child-button-container flex items-center justify-center">
         <span>
           <span className="text-3xl text-white px-10">
@@ -72,10 +75,12 @@ function Donate() {
           <button onClick={handleDonateClick}>Donate</button>
         </span>
       </div>
-        {showDonation && <DonateForm/>}
-            <Gallery isDonor={true} />
-          <div className="donate-footer text-center text-blue-600 text-7xl">RISE YOUR HEPLING HANDS</div>
-      </>      
+      {showDonation && <DonateForm />}
+      <Gallery isDonor={true} />
+      <div className="donate-footer text-center text-blue-600 text-7xl">
+        RISE YOUR HEPLING HANDS
+      </div>
+    </div>
   );
 }
 

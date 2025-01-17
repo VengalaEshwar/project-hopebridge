@@ -8,8 +8,8 @@ function OrphanageApplications() {
         <div className="child-id">12345678</div>
         <div className="applicant-mail">eshwarvengala30@gmail.com</div>
         <div className="application-select">
-          <i className="fa-solid fa-check bg-green-600 text-3xl px-10 m-3  hover:bg-green-700 active:scale-95"></i>
-          <i className="fa-solid fa-xmark bg-red-600 text-3xl px-10 m-3  hover:bg-red-700 active:scale-95"></i>
+          <i className="fa-solid fa-check bg-green-600 text-3xl px-10 m-3  hover:bg-green-700 active:scale-95 max-md:text-xl max-md:px-4 max-md:m-1"></i>
+          <i className="fa-solid fa-xmark bg-red-600 text-3xl px-10 m-3  hover:bg-red-700 active:scale-95 max-md:text-xl max-md:px-4 max-md:m-auto "></i>
         </div>
       </div>
     );

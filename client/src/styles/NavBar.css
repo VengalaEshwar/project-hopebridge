@@ -1,107 +1,107 @@
-.navbar{
-    position:fixed;
-    top : 0;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 0 10px 1px black;
-    padding : 0.8%;
-    width : 99vw;
-    align-items : center;
-    height : 10vh;
-    background-color: transparent;
-    backdrop-filter: blur(0.3rem); /* Blurs the background */
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 1rem 1rem;
-    margin : 0.5%;
-    /* color : rgb(255, 255, 255); */
-    z-index: 10;
-  }
-.nav-items{
-  /* background-color: aqua; */
-  max-width:40%;
+.navbar {
+  position:fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 1px black;
+  padding: 0.8%;
+  width: 99%; 
+  max-width: 99rem;
+  align-items: center;
+  height: 5rem;
+  background-color: transparent;
+  backdrop-filter: blur(0.3rem); /* Blurs the background */
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem 1rem;
+  margin: 0.5rem;
+  z-index: 10;
+}
+.nav-items {
   display: flex;
   justify-content: space-around;
-
 }
-  .side-nav-icon{
-    display : none;
-  }
-   .navbar a{
-     margin : 0% 1rem 0% 0%;
-     padding :0.4rem 1rem;
-     border-radius: 1.5rem;
-     font-size: 1.1rem;
-  }
-  .navbar a:hover
-  {
-    border-radius: 1.5rem;
-    box-shadow: 0 0 10px 1px black;
-  }
-  .active{
-    color: red;
-  }
-  .donate-button,.emergency-button{
-    display: flex;
-    align-items: center;
-    background-color: rgb(255, 0, 0);
-    margin-right :5%;
-     padding :0.4rem 1.8rem;
-     border-radius: 1.5rem;
-     font-size: 1.1rem;
-     color:white;
-     box-shadow: 0 0 10px 1px black;
-  }
-  .donate-button:active,.navbar a:active{
-    background-color: rgb(249, 245, 245); /* Darker red when pressed */
-    transform: scale(0.95); /* Shrinks slightly */
-    box-shadow: 0 0 5px 1px black; /* Adjusts shadow for a pressed effect */
+.side-nav-icon {
+  display: none;
 }
-.emergency-button:active{
+.navbar a {
+  padding: 0.4rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+}
+.navbar a:hover {
+  border-radius: 1.5rem;
+  box-shadow: 0 0 10px 1px black;
+}
+.active {
+  color: red;
+}
+.donate-button,
+.emergency-button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 0, 0);
+  margin-right: 5%;
+  padding: 0.4rem 1.8rem;
+  border-radius: 1.5rem;
+  font-size: 1.1rem;
+  color: white;
+  box-shadow: 0 0 10px 1px black;
+}
+.donate-button:active,
+.navbar a:active {
+  background-color: rgb(249, 245, 245); /* Darker red when pressed */
+  transform: scale(0.95); /* Shrinks slightly */
+  box-shadow: 0 0 5px 1px black; /* Adjusts shadow for a pressed effect */
+}
+.emergency-button:active {
   transform: scale(0.95);
   box-shadow: 0 0 5px 1px black;
 }
-  .donate-button:hover{
-    background-color: white;
-    color:rgb(255, 0, 0);
-  }
-  
+.donate-button:hover {
+  background-color: white;
+  color: rgb(255, 0, 0);
+}
+
 /* responsive design */
-@media (max-width: 768px) {
-    .navbar {
-        height: 4rem;
-        padding: 1rem;
-    }
+@media (max-width: 956px) {
+  .navbar {
+    height: 4rem;
+    padding: 1rem;
+  }
 
-    .navbar a {
-        margin: 0.5rem 0;
-        font-size: 1rem;
-        padding: 0.3rem 1rem;
-        display:none;
-    }
+  .navbar a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    display: none;
+  }
 
-    .donate-button {
-        margin-right: 0;
-        padding: 0.3rem 1.5rem;
-        font-size: 1rem;
-    }
+  .donate-button {
+    margin-right: 0;
+    padding: 0.3rem 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 769px) {
-    .navbar {
-        padding: 1rem;
-    }
-    .side-nav-icon{
-        padding-left:1rem;
-        font-size: 1.5rem;
-        display:initial;
-      }
-    .navbar a {
-        font-size: 0.9rem;
-        padding: 0.2rem 1rem;
-    }
+  .navbar {
+    padding: 1rem;
+  }
+  .side-nav-icon {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    display: initial;
+  }
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 0.2rem 1rem;
+  }
 
-    .donate-button {
-        font-size: 0.9rem;
-        padding: 0.2rem 1rem;
-    }
+  .donate-button {
+    font-size: 0.9rem;
+    padding: 0.2rem 1rem;
+  }
+  .disable-emergency{
+    display:none;
+  }
 }

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Child from "../components/Child";
 import "../styles/Children.css";
 import { useNavigate } from "react-router-dom";
+import AdoptionForm from "../components/AdoptionForm";
 function Children() {
   const navigate = useNavigate();
+  const [adoptForm, setAdoptForm] = useState(false);
   const list = []
   for(let i=0;i<10;i++)
     list.push(<Child/>)
@@ -39,10 +41,11 @@ function Children() {
             soluta iusto exercitationem laboriosam, dolores enim totam ratione
             quasi non, ipsam beatae provident cupiditate voluptate nemo!
           </p>
-          <button className="adopt-page-button">Application Form</button>
+          <button className="adopt-page-button" onClick={()=>{setAdoptForm(!adoptForm)}}>Application Form</button>
         </div>
       </div>
-    </>
+      {adoptForm ? <AdoptionForm /> : null}
+    </> 
   );
 }
 

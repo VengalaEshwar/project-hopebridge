@@ -6,11 +6,13 @@ import EmergencyButton from "../components/EmergencyButton";
 function Home() {
   return (
     <div className="home">
+
       <div className="title-card">
         <div className="title-card-quote">
           <p>A HELPING HAND CAN HEAL BEYOND THE LAND</p>
         </div>
       </div>
+
       <div className="home-middle">
         <h1 >It is our mission to help those in crisis by :</h1>
         <div className="work-layout">
@@ -22,10 +24,12 @@ function Home() {
         <WorkCard/>
         </div>
       </div>
+
       <div className="home-footer-banner">
+
         <div className="home-footer-banner-img" />
+
         <div className="home-footer-banner-context-div">
-        <br /><br />
           <h1>HopeBridge: Unite, Donate, and Empower Orphanages Globally</h1>
           <br />
           <p>
@@ -39,7 +43,9 @@ function Home() {
           <br />
           <button>join us</button>
         </div>
+        
       </div>
+
       <Footer/>
       <EmergencyButton/>
     </div>

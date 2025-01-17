@@ -1,14 +1,16 @@
 .donation-header{
     width : 100%;
-    height : 60svh; /*27rem */
+    height : 28rem; /*27rem */
     background-image :url(images/donation-bg.jpg);
     background-position:center;
     background-size: cover;
     
 }
 .donation-need-container{
-    height : 100vh;
-    margin : 4% 10%;
+    height : 60rem;
+    width : 70rem;
+    max-width: 70rem;
+    margin : auto;
     font-family:sans-serif;
     display: flex;
     flex-direction: column;
@@ -93,37 +95,36 @@
     text-align: justify;
 }
 .donate-footer {
-width : 100%;
-height : 80vh;
+height : 30rem;
 background-image: url(images/donate-footer.png);
 background-size: contain;
 background-position: center;
 }
 /* --------------------------donation form-------------------- */
 .donate-form-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .donate-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    margin-bottom: 1.25rem;
-  }
-  
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.donate-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -162,3 +163,10 @@ background-position: center;
     background-color: #0056b3;
   }
   
+
+  /* --------------------------Mobile Responsive-------------------- */
+  @media(max-width : 768px) {
+    .donation-header{
+      height : 20rem; 
+  }
+  }

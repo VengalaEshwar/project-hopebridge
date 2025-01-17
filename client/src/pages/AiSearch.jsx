@@ -14,7 +14,7 @@ function AiSearch() {
             placeholder="Enter your prompt....."
           />
           <button
-            className="bg-red-400 p-2 hover:bg-red-500 active:scale-95 w-60 rounded-md m-auto"
+            className="bg-red-400 p-2 hover:bg-red-500 active:scale-95 w-60 rounded-md m-auto max-md:my-6"
             onClick={() => {
               setOpenChild(!openChild);
             }}
