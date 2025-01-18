@@ -1,7 +1,7 @@
 .orphanages-header{
     width : 100%;
     height : 28rem;
-    background-image : url("images/Orphanages-bg.jpg");
+    background-image : url(https://res.cloudinary.com/dddkksq5w/image/upload/v1737189581/Orphanages-bg_l5l075.jpg);
     background-size: cover;
 }
 .orphanages-container{
