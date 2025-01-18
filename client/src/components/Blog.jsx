@@ -3,7 +3,7 @@ import React from "react";
 function Blog() {
   return (
     <div className="blog">
-      <img src="/images/hands2.jpg" alt="img" />
+      <img src="/images/hands2.jpg" alt="img" loading="lazy" />
       <div className="blog-content">
         <h1 className="blog-title"> heading</h1>
         <p>
