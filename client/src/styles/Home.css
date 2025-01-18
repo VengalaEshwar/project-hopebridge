@@ -41,7 +41,7 @@
 /* _______________________________________________home-middle___________________________________________________ */
 .home-middle{
     min-height : 40rem;
-    background-image: url("images/home-middle.jpg");
+    background-image: url(https://res.cloudinary.com/dddkksq5w/image/upload/v1737189578/home-middle_optv8k.jpg);
     background-position: center;
     background-size: cover;
    }
@@ -97,7 +97,7 @@
   display: flex;
 }
 .home-footer-banner-img {
-  background-image: url("images/home-footer.jpg");
+  background-image: url(https://res.cloudinary.com/dddkksq5w/image/upload/v1737189578/home-footer_dwpcls.jpg);
   background-repeat: no-repeat; 
   background-position: center;
   background-size: cover;
