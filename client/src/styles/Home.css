@@ -2,7 +2,7 @@
 /* _______________________________________________Title Card___________________________________________________ */
 
 .title-card {
-  background-image: url("images/home-title.webp");
+  background-image: url(https://res.cloudinary.com/dddkksq5w/image/upload/v1737189305/home-title_gbv0z6.webp);
   /* Ensures the image fits within the container without distortion */
   background-position: center;
   background-size: cover;
