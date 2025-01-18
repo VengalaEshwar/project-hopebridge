@@ -36,9 +36,9 @@ function Donate() {
       </div>
 
       
-      <div className="donate-child-button-container flex items-center justify-center">
-        <span>
-          <span className="text-3xl text-white px-10">
+      <div className="donate-child-button-container ">
+        <span >
+          <span className="text-3xl text-white px-10 max-md:text-lg">
             Meet The waiting children
           </span>
           <button
@@ -49,9 +49,9 @@ function Donate() {
             Children
           </button>
         </span>
-        <div className="vertical-line"></div>
+        <div className="vertical-line max-md:hidden"></div>
         <span>
-          <span className="text-3xl text-white px-10">Watch the blogs</span>
+          <span className="text-3xl text-white px-10 max-md:text-lg">Watch the blogs</span>
           <button
             onClick={() => {
               navigate("/blogs");
@@ -67,15 +67,18 @@ function Donate() {
         <DonateFeatureCard />
         <DonateFeatureCard />
       </div>
+
       <div className="donate-child-button-container flex items-center justify-center">
         <span>
-          <span className="text-3xl text-white px-10">
+          <span className="text-3xl text-white px-10 max-md:text-lg">
             Raise your hands towards the needy
           </span>
-          <button onClick={handleDonateClick}>Donate</button>
+          <button onClick={handleDonateClick} >Donate</button>
         </span>
       </div>
+
       {showDonation && <DonateForm />}
+
       <Gallery isDonor={true} />
       <div className="donate-footer text-center text-blue-600 text-7xl">
         RISE YOUR HEPLING HANDS

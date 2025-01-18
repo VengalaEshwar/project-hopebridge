@@ -44,3 +44,18 @@
 }
 
 /* Responsive Design */
+
+@media(max-width : 768px)
+{
+ 
+    .error-page
+    {
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 1%;
+        padding: 1rem;    
+    }
+}

@@ -1,26 +1,28 @@
+/* --------------------------donation header-------------------- */
 .donation-header{
-    width : 100%;
-    height : 28rem; /*27rem */
-    background-image :url(images/donation-bg.jpg);
-    background-position:center;
-    background-size: cover;
-    
+  width : 100%;
+  height : 28rem; 
+  background-image :url(images/donation-bg.jpg);
+  background-position:center;
+  background-size: cover;
+  
 }
+/* --------------------------donation need container-------------------- */
 .donation-need-container{
-    height : 60rem;
-    width : 70rem;
-    max-width: 70rem;
+  height : auto;
+  max-width : 80%;
     margin : auto;
     font-family:sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: auto;
+    margin-bottom : 5rem;
 }
 .donation-need-container h1{
     font-size: 3rem;
     text-align: center;
-    padding : 1rem 10rem;
+    padding : 1rem 5rem;
     font-weight: 600;
 }
 .donation-need-container p{
@@ -28,77 +30,89 @@
     padding : 0 15%;
     text-align: justify;
     font-weight:300;
-}
-.donate-child-button-container button{
-    padding : 0.5rem 5rem;
-    background-color: #d9d91e;
-    border-radius: 0.2rem;
-    font-size: 2rem;
-    color: rgb(17,79,160);
-    font-weight: 400;
-
-}
-.vertical-line{
-    background-color: white;
-    height : 7rem;
-    width : 1px;
-}
-.donate-child-button-container button:active{
-    transform: scale(0.8);
-}
-.donate-need-image{
+  }
+  .donate-need-image{
     width : 20rem;
     height : 20rem;
     background-image:url(images/donate-middle.png);
     background-position: center;
     background-size: cover;
 }
-.donate-child-button-container{
+  /* --------------------------donation child buttons-------------------- */
+  .donate-child-button-container button{
+    padding : 0.5rem 5rem;
+    background-color: #d9d91e;
+    border-radius: 0.2rem;
+    font-size: 2rem;
+    color: rgb(17,79,160);
+    font-weight: 400;
+    
+  }
+  
+  .vertical-line{
+    background-color: white;
+    height : 7rem;
+    width : 1px;
+  }
+  .donate-child-button-container button:active{
+    transform: scale(0.8);
+  }
+  
+  .donate-child-button-container{
     width:100%;
-    height : 10rem;
+    min-height : 10rem;
     background-color:rgb(17,79,160);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .donate-child-button-container span{
-    margin-right : 2rem;
+  flex-grow : 1;
+  display: flex;
+  padding : 1rem;
+  justify-content: space-around;
 }
+/* --------------------------donation feature cards-------------------- */
 .donate-feature-cards-section{
-    width : 100%;
-    height : auto;
-    /* background-color: aqua; */
+  width : 100%;
+  height : auto;
     display: flex;
     justify-content: space-around;
-    padding : 0 3rem;
+    padding : 8rem 3rem;
     flex-wrap: wrap;
-}
-.donate-feature-card{
+    gap : 1rem;
+  }
+  .donate-feature-card{
     height : 25rem;
     width : 20rem;
-    margin : 5rem 0;
     background-color: #D9EAFD;
     border-radius: 0.5rem;
-    box-shadow: 1px 1px 10px 1px black;
+    box-shadow: 1px 1px 5px 1px rgb(161, 158, 158);
     cursor: pointer;
     
 }
 .donate-feature-card:hover{
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 .donate-feature-card h1{
-    padding : 1rem;
+  padding : 1rem;
     font-size: 1.5rem;
     color : red;
     text-align: center;
-}
-.donate-feature-card p{
+  }
+  .donate-feature-card p{
     padding : 0 2rem ;
     font-size: 1.2rem;
     text-align: justify;
 }
+/* --------------------------donation footer-------------------- */
 .donate-footer {
 height : 30rem;
 background-image: url(images/donate-footer.png);
 background-size: contain;
 background-position: center;
+padding-top:2rem;
 }
 /* --------------------------donation form-------------------- */
 .donate-form-container {
@@ -166,7 +180,42 @@ h2 {
 
   /* --------------------------Mobile Responsive-------------------- */
   @media(max-width : 768px) {
+    /* --------------------------Donation Header-------------------- */
     .donation-header{
       height : 20rem; 
+    }
+    /* --------------------------Donation Need Container-------------------- */
+    .donation-need-container{
+      max-width : 100%;
+      margin : 0;
+    }
+    .donation-need-container h1{
+      font-size: 1.5rem;
+      font-weight: 900;
+      padding: 0;
+    }
+    .donation-need-container p{
+      font-size: 1rem;
+      padding : 2rem ;
+    }
+    /* --------------------------Donation child buttons-------------------- */
+    .donate-child-button-container button{
+      padding : 0.5rem 1rem;
+      height : 3rem;
+      width : 6rem;
+      font-size: 1rem;
+      
+    }
+    /* --------------------------Donation child buttons-------------------- */
+    .donate-feature-cards-section{
+      padding : 2rem;
+    }
+    /* --------------------------Donation Footer-------------------- */
+  .donate-footer{
+    padding-top:1rem;
+    font-size: 1.5rem;
+    height : 10rem;
   }
-  }
+
+
+}

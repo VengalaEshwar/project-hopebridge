@@ -131,7 +131,7 @@
     text-align: justify;
     margin: 3rem auto;
     cursor: pointer;
-    box-shadow: 1px 2px 10px 2px black;
+    box-shadow: 1px 2px 3px 1px rgb(198, 195, 195);
     overflow: hidden; /* Ensures content stays hidden when collapsed */
     transition: max-height 1s ease-in-out; /* Smoothly animates height change */
     max-height: 5.5rem; /* Initial collapsed height */
@@ -326,7 +326,6 @@
 /* ________________________________________pop ups in content box______________________________________ */
 .adopt-content-box-popup h1 {
   font-size: 1.1rem;
-  color: #ff9500;
   text-align: center;
 }
 
@@ -425,16 +424,20 @@
     /* ________________________________________pop ups in content box______________________________________ */
     .adopt-content-box-popup h1 {
       font-size: 1.1rem;
-      color: #ffa600;
       text-align: center;
+      font-weight: 900;
     }
     .adopt-content-box-popup p {
       font-size: 1rem;
       margin-top: 1rem;
     }
     .adopt-content-box-popup{
-      max-height : 4rem;
+      max-width: 90%;
+      padding: 1rem;
+      border-radius: 0.1rem;
+      margin: 1rem auto;
     }
+  
     /* ________________________________________Adoption content box buttons______________________________________ */
     .adopt-content-box-buttons{
       flex-direction: column;

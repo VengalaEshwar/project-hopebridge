@@ -218,6 +218,7 @@
     height: 3rem;
     font-size: 1rem;
     margin-bottom: 5%;
+    border-radius: 0.5rem;
   }
   .work-card-img i{
     font-size:1.4rem;

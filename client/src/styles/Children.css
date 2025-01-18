@@ -35,3 +35,17 @@
 .child-details ul li{
   padding : 0.5rem;
 }
+@media(max-width : 768px)
+{
+  .child-card-photo{
+    height : auto;
+    width : 20rem;
+    border-radius: 0.5rem;
+  }
+  .child-card{
+    justify-content: center;
+  }
+  .child-btn{
+    margin-left : 1rem;
+  }
+}

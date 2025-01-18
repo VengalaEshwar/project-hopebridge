@@ -6,7 +6,7 @@ function Transaction({ transaction }) {
     <div className="transaction">
       <p><strong>Transaction ID:</strong> {transaction.id}</p>
       <p><strong>Creditor Name:</strong> {transaction.creditorName}</p>
-      <p><strong>Amount:</strong> ${transaction.amount}</p>
+      <p><strong>Amount:</strong> {transaction.amount}rs</p>
       <p><strong>Date:</strong> {transaction.date}</p>
       <p><strong>Details:</strong> {transaction.details}</p>
     </div>

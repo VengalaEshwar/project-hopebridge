@@ -57,12 +57,12 @@ function Child() {
                 voluptatum quidem alias provident! Ullam velit aliquam commodi
               </li>
               <button 
-              className="bg-green-400 p-2 hover:bg-green-500 active:scale-95 w-60 rounded-md my-2">adopt</button>
+              className="bg-green-400 p-2 hover:bg-green-500 active:scale-95 w-60 rounded-md my-2 child-btn">adopt</button>
             </>
           ) : null}
 
           <button
-            className="bg-red-400 p-2 hover:bg-red-500 active:scale-95 w-60 rounded-md"
+            className="bg-red-400 p-2 hover:bg-red-500 active:scale-95 w-60 rounded-md child-btn"
             onClick={handleClick}
           >
             {flag ? "View More" : "View Less"}
