@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Razorpay from 'razorpay'
 function DonateForm() {
   const [formData, setFormData] = useState({
     donorName: "",
