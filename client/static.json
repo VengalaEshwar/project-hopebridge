@@ -1,4 +1,6 @@
 {
+    "root": "./dist",
+    "cleanUrls": true,
     "rewrites": [
       {
         "source": "/**",
