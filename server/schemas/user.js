@@ -17,6 +17,14 @@ const userSchema = new mongoose.Schema({
     enum: ["donor", "adopter", "admin"],
     default: "donor" 
   },
+  blogs : [{ type : mongoose.Schema.Types.ObjectId,
+    ref: "Blog",
+    required: false,}]
+  ,
+  phone : {
+    type : Number,
+    required : true
+  },
   preferences: {
     age: { type: Number,
       required: false
@@ -29,6 +37,7 @@ const userSchema = new mongoose.Schema({
     location: { type: String, required: false },
   },
   createdAt: { type: Date, default: Date.now },
-});
-const user = mongoose.model("User", userSchema);
-module.exports = user;
+},
+{ timestamps: true });
+const User = mongoose.model("User", userSchema);
+module.exports = User;

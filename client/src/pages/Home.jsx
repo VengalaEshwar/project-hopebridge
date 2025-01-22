@@ -3,6 +3,7 @@ import "../styles/Home.css";
 import WorkCard from "../components/WorkCard";
 import Footer from "../components/Footer";
 import EmergencyButton from "../components/EmergencyButton";
+import SignUpForm from "../components/SignUpForm";
 function Home() {
   return (
     <div className="home">
@@ -45,7 +46,7 @@ function Home() {
         </div>
         
       </div>
-
+      <SignUpForm/>
       <Footer/>
       <EmergencyButton/>
     </div>
