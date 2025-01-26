@@ -1,4 +1,17 @@
+const mongoose = require('mongoose');
 const adoptionSchema = new mongoose.Schema({
+  name : {
+    type : String,
+    required : true,
+  },
+  email : {
+    type : String,
+    required : true,
+  },
+  mobile : {
+    type : String,
+    required : true
+  },
   adopter: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -15,7 +28,7 @@ const adoptionSchema = new mongoose.Schema({
     enum: ["pending", "approved", "rejected"],
     default: "pending",
   },
-  adoptionDate: { type: Date, required: false },
+  applicationDate: { type: Date, required: false ,default : Date.now},
   notes: { type: String, required: false },
 });
 

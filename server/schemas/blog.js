@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const blogSchema = new mongoose.Schema({
   title: { 
     type: String,
@@ -13,7 +14,7 @@ const blogSchema = new mongoose.Schema({
   createdAt: { type: Date,
     default: Date.now 
 },
-  photo : {
+  imageURL : {
     type : String,
     required : true
   },
@@ -23,6 +24,6 @@ const blogSchema = new mongoose.Schema({
 },
 });
 
-const blog=mongoose.model("Blog", blogSchema);
+const Blog=mongoose.model("Blog", blogSchema);
 module.exports = Blog;
 

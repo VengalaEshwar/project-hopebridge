@@ -3,8 +3,6 @@ const signupUser = async (req, res) => {
   try {
     const response = await createUser(req.body);
 
-    console.log(response);
-
     if (!response.success){
         return res.status(400).json(response);
     }
@@ -24,10 +22,9 @@ const signupUser = async (req, res) => {
 
   }
 };
-const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {  
   try {
-    const response = await authenticateUser(req.body);
-    console.log(response);
+    const response =  await authenticateUser(req.body);
     if(!response.success)
         return res.status(401).send(response)
     res.cookie('JWT_TOKEN', response.JWT_TOKEN, {
@@ -48,7 +45,7 @@ const loginUser = async (req, res) => {
 };
 const logoutUser = (req,res)=>{
     try{
-        res.clearCookie('JWT_TOKEN', {
+        res.cookie('JWT_TOKEN',"" ,{
             httpOnly: true,  // Ensures it is not accessible via JavaScript
             secure: process.env.NODE_ENV === 'production', // Ensure it's sent only over HTTPS in production
             sameSite: 'strict',  // Mitigates CSRF attacks

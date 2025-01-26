@@ -1,4 +1,5 @@
 const User = require("../schemas/user.js");
+const Orphanage = require("../schemas/orphanageSchema.js");
 const {JWT_SECRET_KEY} = require("../configs/serverConfig.js")
 const {generateToken} = require('../utils/jwt.js')
 const argon2 = require("argon2");
@@ -24,16 +25,15 @@ const createUser = async (userDetails) => {
 };
 const authenticateUser = async(userDetails)=>{
     try{
-        const { email, phone, password } = userDetails;
-        const user = await User.findOne({ $or: [{ email }, { phone }] });
-        if (!user) return { message: "user does not  exist please register" ,success:false};
-        console.log("user pass :" ,user.password);
+        const { email, phone, password,role } = userDetails;
+        const user = await (role==='user'?User:Orphanage).findOne({ $or: [{ email }, { phone }] }) ;
+        if (!user) return { message: `${role} does not  exist please register` ,success:false};
         const encryPass = await argon2.verify(user.password,password); //hashedPass,orgPass
         if(!encryPass)
             return {message : "Password is Incorrect",success : false};
         //making a JWT_TOKEN
         const userData={
-            name:user.name,phone,email
+            name:user.name,phone,email,role
         }
         const token = generateToken(userData);
         return {
@@ -43,6 +43,7 @@ const authenticateUser = async(userDetails)=>{
                name: user.name,
                 email,
                 phone,
+                role
             },
             success : true
         }

@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
      required: true,
       unique: true 
   },
+  imageURL :{
+    type : String,
+    required : false
+  },
   password: { type: String,
      required: true 
   },
@@ -25,6 +29,7 @@ const userSchema = new mongoose.Schema({
     type : Number,
     required : true
   },
+  applications :[{type : mongoose.Types.ObjectId, ref : "Adoption"}],
   preferences: {
     age: { type: Number,
       required: false
@@ -36,7 +41,12 @@ const userSchema = new mongoose.Schema({
     },
     location: { type: String, required: false },
   },
+  amountDonated : {
+    type : Number,
+    default : 0
+  },
   createdAt: { type: Date, default: Date.now },
+  transactions: [{ type: mongoose.Types.ObjectId , default: Date.now }],
 },
 { timestamps: true });
 const User = mongoose.model("User", userSchema);
