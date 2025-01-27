@@ -1,4 +1,4 @@
-import React,{Children, useState} from "react";
+import React,{Children, useEffect, useState} from "react";
 import "../styles/Orphanages.css";
 import {NavLink} from "react-router-dom";
 import OrphanageHome from "../components/OrphanageHome";
@@ -19,6 +19,22 @@ function Orphanges() {
   const handleNavClick =(key)=>{
     setCurrentTab(key);
   }
+    const [isWide, setIsWide] = useState(window.innerWidth >= 768);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setIsWide(window.innerWidth >= 768);
+      };
+  
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+  
+      // Cleanup listener on unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    
+  const [show ,setShow] = useState(false);
   return (
     <div>
       <div className="orphanages-header"></div>
@@ -27,19 +43,20 @@ function Orphanges() {
           {navList.map((val,index)=>
           <NavLink 
             to="" 
-            className="active:scale-95" 
+            className="active:scale-95 hide" 
             key={index} 
             onClick={()=>handleNavClick(index) }  
-            style={{"color" : index==currentTab?"red":"white"}}>
+            style={{"color" : index==currentTab?"red":"white","display" : (show || isWide) ?"flex":"none"}}>
               {val}
           </NavLink>
         )} 
         <div className="hidden max-md:block w-full">
           <NavLink 
-            to="*" 
+            to="" 
             className="active:scale-95 " 
+            onClick={()=>{setShow(!show)}}
             >
-              Show All
+              {!show?"Show All":"hide"}
         </NavLink></div>
         
         {/* <img src="images/logo.png" alt="" /> */}

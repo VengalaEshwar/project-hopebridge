@@ -1,14 +1,10 @@
 import React from "react";
 
-function DonateFeatureCard() {
+function DonateFeatureCard({title, description}) {
   return (
     <div className="donate-feature-card">
-      <h1>Donate:Orphange</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-        recusandae alias distinctio! Porro quaerat corporis placeat ut magni.
-        Quos, nostrum ex adipisci soluta magni reprehenderit molestias 
-      </p>
+      <h1>{title}</h1>
+      <p >{description}</p>
     </div>
   );
 }

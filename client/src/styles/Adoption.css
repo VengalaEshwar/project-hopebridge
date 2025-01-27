@@ -160,6 +160,11 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .adopt-content-box-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .adopt-content-box-buttons > * {
     height:17em;
     padding : 1rem;

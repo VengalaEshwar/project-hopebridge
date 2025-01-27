@@ -39,20 +39,16 @@ function AiSearch() {
             <h1 className="text-yellow-400 text-5xl text-center">
               How it works
             </h1>
-            <p className="text-justify p-3 text-xl my-20">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              esse quasi quidem iusto architecto, id quis sed beatae perferendis
-              deserunt ducimus modi dicta doloribus explicabo exercitationem
-              amet. Est quam repudiandae eos repellat? Omnis quam recusandae
-              voluptatum voluptate eius ratione voluptatibus qui repellendus
-              unde inventore sint totam accusamus dolore nisi esse officiis
-              consectetur vel, earum asperiores consequuntur harum officia
-              facere! Vitae, veniam debitis quia sapiente, aliquid quos sunt
-              dicta culpa maiores, exercitationem inventore recusandae quaerat
-              officiis totam excepturi voluptas alias eaque consequuntur
-              mollitia repellat cum. Ipsa nihil impedit cupiditate ratione
-              eligendi, illum repellat perspiciatis doloremque obcaecati culpa
-              omnis incidunt est nostrum?
+            <p className="text-justify p-3 text-2xl my-20">
+              Our AI-powered search feature uses advanced algorithms to help you
+              find children available for adoption based on your specific
+              criteria. By analyzing various attributes such as age, health,
+              special needs, and background, the AI matches children with
+              families who are best suited to meet their needs. You simply input
+              your preferences, and the AI will filter through available
+              profiles, suggesting the best matches. This streamlined process
+              helps families make informed decisions quickly, ensuring that
+              children find their forever homes faster and more efficiently.
             </p>
           </div>
         )}

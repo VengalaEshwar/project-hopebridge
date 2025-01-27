@@ -86,6 +86,7 @@
   .donate-feature-card{
     height : 25rem;
     width : 20rem;
+    overflow: scroll;
     background-color: #D9EAFD;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 5px 1px rgb(161, 158, 158);
@@ -219,3 +220,4 @@ h2 {
 
 
 }
+

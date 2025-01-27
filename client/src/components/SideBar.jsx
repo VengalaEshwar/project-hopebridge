@@ -8,6 +8,7 @@ function SideBar() {
       <NavLink to="/adopt">adopt</NavLink>
       <NavLink to="/about">about</NavLink>
       <NavLink to="/blogs">blogs</NavLink>
+      <NavLink to="/orphanage">orphanage</NavLink>
     </div>
   );
 }

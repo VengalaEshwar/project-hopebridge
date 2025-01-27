@@ -1,10 +1,10 @@
 import React from "react";
 
-function WorkCard() {
+function WorkCard({data,icon}) {
   return (
     <div className="work-card">
-      <div className="work-card-img"><i className="fa-regular fa-user"></i></div>
-      Lorem ipsum dolor sit amet consectetur
+      <div className="work-card-img"><i className={icon}></i></div>
+      {data}
     </div>
   );
 }

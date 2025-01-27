@@ -9,6 +9,7 @@ const orphanageRouter = require("./routes/orphanageRouter");
 const donateRouter = require("./routes/donateRouter.js");
 const childRouter = require("./routes/childRouter");
 const multer = require('multer');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const uploadIfExist = require('./Middlewares/multerMiddleware.js');
 const handleDonationToAllOrphanages = require('./utils/handleDonationToAllOrphanages.js')
@@ -18,7 +19,7 @@ const app = express();
 
 //middlewares
 
-
+app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -46,10 +47,15 @@ setInterval(handleDonationToAllOrphanages, 24 * 60 * 60 * 1000);
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //test router
 app.use("/ping",(req,res)=>{
-    console.log(req.body)
+    try{
+        console.log(req.body)
     res.status(200).json({
         message : "pong"
     })
+    }catch(e)
+    {
+        console.log(error);
+    }
 })
 app.get("/",(req,res)=>{
     res.status(200.).json({
