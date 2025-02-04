@@ -10,6 +10,7 @@ module.exports = {
 CLOUDINARY_KEY : process.env.CLOUDINARY_KEY,
 CLOUDINARY_SECRET : process.env.CLOUDINARY_SECRET,
 GLOBAL_ID :process.env.GLOBAL_ID,
+FRONTEND_URL :process.env.FRONTEND_URL,
 }
 
 //Eshwar@1617 eshwar // username and pass
