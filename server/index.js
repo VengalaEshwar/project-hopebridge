@@ -22,8 +22,9 @@ const app = express();
 // const FRONTEND_URL='http://localhost:5173/'
 
 app.use(cors({
-    origin: config.FRONTEND_URL,  // Allow requests from your frontend
-    credentials: true  // Enable cookies
+    origin: config.FRONTEND_URL, // Allow your frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true, // Allow cookies and authorization headers
   }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
