@@ -10,20 +10,21 @@ const postDonation = async (data)=>{
         {
             //here handling of payment should be happend but to reduce the complexity it has been removed 
             //add money into the orphanage account
-            let orphanage = await Orphanage.findByIdAndUpdate(data.orphanageID,{$inc : {amountReceived : data.amount}});
+            let orphanage = await Orphanage.findByIdAndUpdate(data.orphanageId,{$inc : {amountReceived : data.amount}});
             //add money to donatedamount in user account
             let user =await User.findByIdAndUpdate(data.userID,{$inc : {amountDonated : data.amount}});
             const transaction =await Transaction.create({
-                credit : orphanage._id,
+                credit : orphanage?._id,
                 debit : user._id,
-                note : data.comments
+                note : data.comments,
+                amount : data.amount
             });
-            orphanage = await Orphanage.findByIdAndUpdate(data.orphanageID,{$push : {transactions : transaction._id}});
+            orphanage = await Orphanage.findByIdAndUpdate(data.orphanageId,{$push : {transactions : transaction._id}});
             user =await User.findByIdAndUpdate(data.userID,{$push : {transactions : transaction._id}});
             const donation = await Donation.create({
                 donor : data.userID,
                 amount : data.amount,
-                orphanage :data.orphanageID,
+                orphanage :data.orphanageId,
                 transactionID :  transaction._id,
                 comments : data.comments,
                 donationType : data.donationType
@@ -46,7 +47,8 @@ const postDonation = async (data)=>{
             const transaction =await Transaction.create({
                 credit : GLOBAL_ID,
                 debit : user._id,
-                note : data.comments
+                note : data.comments,
+                amount : data.amount
             });
             user =await User.findByIdAndUpdate(data.userID,{$push : {transactions : transaction._id}});
             const donation = await Donation.create({
@@ -74,4 +76,23 @@ const postDonation = async (data)=>{
         throw new Error(error);
     }
 }
-module.exports={postDonation} ;
+const getTransactionService=async (data)=>{
+    try{
+        const transaction =await Transaction.findById(data);
+        if(Object.keys(transaction).length<=0 )
+            return {
+                success : false,
+                message : "failed to fetch transaction",
+        }
+        return {
+            success : true,
+            message : "successfully fetched the transaction",
+            transaction
+        }
+    }catch(e)
+    {
+        console.log(error);
+        throw new Error(error);
+    }
+}
+module.exports={postDonation,getTransactionService} ;

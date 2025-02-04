@@ -43,6 +43,7 @@ const handleDonationToAllOrphanages = async () => {
           debit: GLOBAL_ID,
           credit: og._id,
           note: "Funds credited through auto payment scheduler",
+          amount : data.amount
         });
 
         // Add transaction to the orphanage's transactions

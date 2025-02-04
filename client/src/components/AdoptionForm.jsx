@@ -17,8 +17,6 @@ function AdoptionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add logic to send the data to the backend API
   };
 
   return (

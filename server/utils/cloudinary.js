@@ -8,7 +8,6 @@ const uploadToCloudinary = async (path)=>{
         return result.secure_url;
       } catch (error) {
         console.error(error);
-        throw new Error(error);
       }
 }
 const removeFromCloudinary = async (path)=>{
@@ -22,7 +21,6 @@ const removeFromCloudinary = async (path)=>{
         }});
       } catch (error) {
         console.error(error);
-        throw new Error(error);
       }
 }
 module.exports={

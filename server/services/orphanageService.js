@@ -13,18 +13,27 @@ const createOrphanage = async (data) => {
         success: false,
         message: "orphanage already exist with given mail or mobile",
       };
+      data.imageURL = await  uploadToCloudinary(data?.imagePath);
       data.password = await argon2.hash(data.password);
     const orphanageResponse = await Orphanage.create(data);
-    return orphanageResponse;
+    if(data.imagePath!=null)
+      {
+        deleteImage(data.imagePath);
+        data.imagePath=null;
+      }
+    return {
+      success : true,
+      message : "successfully added orphanage to server",
+      orphanage :orphanageResponse};
  }catch(error)
  {
     console.log(error);
     throw new Error(error);
  }
 };
-const readOrphanage = async (data) => {
+const readOrphanage = async (id) => {
   try{
-    const orphanageDetails = await Orphanage.findById(data.id);
+    const orphanageDetails = await Orphanage.findById(id);
   if (!orphanageDetails)
     return {
       success: false,
@@ -32,7 +41,7 @@ const readOrphanage = async (data) => {
     };
   return {
     success: true,
-    message: "orphange details are read",
+    message: "orphange details are loaded",
     orphanageDetails,
   };
   }catch(error)
@@ -142,10 +151,41 @@ const postPhoto = async (data) => {
     throw new Error("An error occurred while adding the photo");
   }
 };
+const getbyIdPhoto = async (data) => {
+  try {
+  
+    const photo = await Gallery.findById(data);
+    return {
+      success: true,
+      message: "Successfully fetched the image",
+      photo
+    };
+  } catch (error) {
+    console.error(error);
+    throw new Error("An error occurred while adding the photo");
+  }
+};
+const getAllOrphanageIdsAndNames = async () => {
+  try {
+  
+  let orphanages = await Orphanage.find();
+    orphanages=orphanages.map((data)=>({_id : data.id,name: data.name}));
+    return {
+      success: true,
+      message: "Successfully fetched the image",
+      orphanages
+    };
+  } catch (error) {
+    console.error(error);
+    throw new Error("An error occurred while adding the photo");
+  }
+};
 
 module.exports = {
   createOrphanage,
   readOrphanage,
   updateOrphanage,
-  postPhoto
+  postPhoto,
+  getbyIdPhoto,
+  getAllOrphanageIdsAndNames
 };

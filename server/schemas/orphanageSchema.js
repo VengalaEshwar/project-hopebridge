@@ -6,7 +6,7 @@ const orphanageSchema = new mongoose.Schema({
 },
   imageURL :{
     type : String,
-    required : false
+    required : true
   },
   location: { 
     type: String,
@@ -14,7 +14,7 @@ const orphanageSchema = new mongoose.Schema({
  },
   description: { 
     type: String, 
-    required: false
+    required: true
  },
   children: [{ type: mongoose.Schema.Types.ObjectId, ref: "Child" }],
   email: { 
@@ -23,7 +23,7 @@ const orphanageSchema = new mongoose.Schema({
 },
   yoe : {
     type : Number,
-    required : false
+    required : true
   },
   phone: { 
     type: String, 
@@ -40,10 +40,6 @@ amountReceived : {
 applications :[{type : mongoose.Types.ObjectId, ref : "Adoption"}],
 gallery : [{type : mongoose.Schema.Types.ObjectId,required : false , ref : "gallery"}],
 transactions : [{type : mongoose.Schema.Types.ObjectId,required : false , ref : "transaction"}],
-aboutUs : {
-  type : String,
-  required : false
-},
   createdAt: { type: Date, default: Date.now },
 });
 const orphanage = mongoose.model("Orphanage", orphanageSchema);

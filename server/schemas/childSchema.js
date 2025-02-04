@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const childSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  gender: { type: String, enum: ["male", "female", "other"], required: true },
+  gender: { type: String, required: true },
   dob : {type : Date,required  : true},
   status: {
     type: String,

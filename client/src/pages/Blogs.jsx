@@ -1,31 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Blogs.css";
 import Blog from "../components/Blog";
-import { Outlet, useNavigate, useNavigation } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import axiosInstance from "../helpers/axiosInstance";
+
 function Blogs() {
   const navigate = useNavigate();
   const [isBlogForm, setIsBlogForm] = useState(false);
+  const [blogsData,setBlogsData] = useState(null);
+  useEffect(()=>{
+      
+    const getBlogs=async ()=>{
+      const data = await axiosInstance.get("/blogs");
+        setBlogsData(data?.data?.blogs)
+    }
+        getBlogs();
+    },[]);
   const BlogLayout = () => {
     return (
       <>
         <div className="blogs-layout">
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
+          {blogsData && blogsData.map((data)=><Blog data={data}/>)}
         </div>
       </>
     );
@@ -53,7 +48,7 @@ function Blogs() {
       </div>
 
 
-      {isBlogForm ? <Outlet /> : <BlogLayout />}
+      {isBlogForm ? <Outlet context={{ isBlogForm, setIsBlogForm }}/> : <BlogLayout />}
       <div className="blog-end"></div>
     </div>
   );

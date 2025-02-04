@@ -1,9 +1,9 @@
-const {createOrphanage,readOrphanage,updateOrphanage,postPhoto} = require('../services/orphanageService');
+const {createOrphanage,readOrphanage,updateOrphanage,postPhoto,getbyIdPhoto,getAllOrphanageIdsAndNames} = require('../services/orphanageService');
 const registerOrphanage = async (req,res)=>{
     try{
         const orphanage = await createOrphanage(req.body);
         if(!orphanage.success)
-            return res.status(401).json(orphanage)
+            return res.json(orphanage)
         return res.status(201).json(orphanage);
     }catch(error)
     {
@@ -16,9 +16,9 @@ const registerOrphanage = async (req,res)=>{
 }
 const orphanageDetails = async (req,res)=>{
     try{
-        const orphanage = await readOrphanage(req.body);
+        const orphanage = await readOrphanage(req.params.id);
         if(!orphanage.success)
-            return res.status(401).json(orphanage)
+            return res.json(orphanage)
         return res.status(201).json(orphanage);
     }catch(error)
     {
@@ -59,9 +59,41 @@ const addPhoto = async (req,res)=>{
         })   
     }
 }
+const getPhoto = async (req,res)=>{
+    try{
+        const photo = await getbyIdPhoto(req.params.id);
+        if(!photo.success)
+            return res.status(401).json(photo)
+        return res.status(201).json(photo);
+    }catch(error)
+    {
+        return res.status(501).json({
+            message : "Some error occurred at server",
+            status : false,
+            error
+        })   
+    }
+}
+const getAllOrphanages = async (req,res)=>{
+    try{
+        const orphanages = await getAllOrphanageIdsAndNames();
+        if(!orphanages.success)
+            return res.status(401).json(orphanages)
+        return res.status(201).json(orphanages);
+    }catch(error)
+    {
+        return res.status(501).json({
+            message : "Some error occurred at server",
+            status : false,
+            error
+        })   
+    }
+}
 module.exports={
     registerOrphanage,
     orphanageDetails,
     editOrphanage,
-    addPhoto
+    addPhoto,
+    getPhoto,
+    getAllOrphanages
 }

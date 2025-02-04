@@ -72,4 +72,18 @@ const editApplication = async (data)=>{
         throw new Error(error);
     }
 }
-module.exports={postApplication,editApplication};
+const getApplication = async (data)=>{
+    try{
+        const application = await Adoption.findById(data);
+        return {
+            success : true,
+            message: "fetched the application",
+            application
+        }
+    }catch(error)
+    {
+        console.log(error);
+        throw new Error(error);
+    }
+}
+module.exports={postApplication,editApplication,getApplication};

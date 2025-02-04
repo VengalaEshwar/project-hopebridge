@@ -4,6 +4,8 @@ import WorkCard from "../components/WorkCard";
 import Footer from "../components/Footer";
 import EmergencyButton from "../components/EmergencyButton";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import PaymentCard from "../components/PaymentCard";
 const workCardData = [
   "Seamlessly facilitating global donations for orphanages.",
   "Streamlining adoption processes across international borders.",
@@ -21,9 +23,11 @@ const icons = [
   "fa-solid fa-person-shelter"
 ]
 function Home() {
+  const auth = useSelector((state)=>state.auth);
   const navigate = useNavigate();
   return (
     <div className="home">
+      
       <div className="title-card">
         <div className="title-card-quote">
           <p>A HELPING HAND CAN HEAL BEYOND THE LAND</p>
@@ -38,7 +42,6 @@ function Home() {
           })}
         </div>
       </div>
-
       <div className="home-footer-banner">
         <div className="home-footer-banner-img" />
 
@@ -56,7 +59,8 @@ function Home() {
             future, offering hope to those in need.
           </p>
           <br />
-          <button onClick={() => navigate("/signup")}>join us</button>
+
+          {!auth?.isLoggin && <button onClick={() => navigate("/signup")}>join us</button>}
         </div>
       </div>
       <Footer />

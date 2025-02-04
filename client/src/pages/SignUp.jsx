@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "../styles/SignUp.css" // Include the CSS file
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signUp } from "../redux/slices/authSlice";
 const Signup = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,14 +24,15 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // alert("form submitted");
-    alert(JSON.stringify(formData));
-    // try {
-    //   const response = await axios.post("#", formData);
-    //   alert("Signup successful: " + response.data.message);
-    // } catch (error) {
-    //   alert("Signup failed: " + error.response.data.error);
-    // }
+    try {
+      const response = await dispatch(signUp(formData));
+      if(response.payload.data.success)
+      {
+        navigate("/login");
+      }
+    } catch (error) {
+     console.log(error);
+    }
   };
 
   return (
@@ -89,6 +93,7 @@ const Signup = () => {
 
         <button type="submit" className="signup-button">Sign Up</button>
         <p>if already existing user <Link className="text-blue-700" to="/login">login</Link></p>
+        <p>sign up as <Link className="text-blue-700" to="/create-orphanage"> orphanage</Link></p>
       </form>
     </div>
    </div>

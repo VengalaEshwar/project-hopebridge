@@ -12,7 +12,7 @@ const createChild = async (data)=>{
                     dob : data.dob,
                     gender : data.gender,
                     imageURL,
-                    description : data.secription,
+                    description : data.description ,
                     orphanage : data.orphanageID
             });
             if(Object.keys(child).length<=0)
@@ -43,11 +43,11 @@ const createChild = async (data)=>{
 }
 const readChild = async (req)=>{
     const curPage = req.params.page || 1;
-    const skip = (curPage - 1) * 10;
+    const skip = (curPage - 1) * 100;
     try{
-        const children = await Child.find().skip(skip).limit(10);
+        const children = await Child.find()//.skip(skip).limit(100); //later change  it to 10 in blogs also
         const totalCount = await Child.countDocuments();
-        const totalPages = Math.ceil(totalCount / 10);
+        const totalPages = Math.ceil(totalCount ); /// 10
         const pre = curPage > 1 && curPage-1<=totalPages;
         const next = totalPages>curPage;
         const response ={
@@ -60,7 +60,7 @@ const readChild = async (req)=>{
     }
     catch(error){
         console.log(error);
-        return new Error(error);
+        throw new Error(error);
     }
 }
 const readSingleChild = async (childID)=>{

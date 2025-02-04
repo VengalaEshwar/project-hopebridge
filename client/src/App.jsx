@@ -17,20 +17,20 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import { useEffect } from "react";
 import axiosInstance from "./helpers/axiosInstance";
+import Profile from "./pages/Profile";
+import { useDispatch, useSelector } from "react-redux";
+import { getOrphanages } from "./redux/slices/orphanagesSlice";
+import OrphanageSignup from "./pages/OrphanageSignup";
 //import styled from 'styled-components'; //used for styling components using css in js
 function App() {
-  // useEffect(()=>{
-  //   try{
-  //     console.log("App loaded");
-  //   const data = axiosInstance.get("/blogs").then((data)=>{
-  //     console.log(data).catch((e)=>console.log(e));
-  //   });
-  //   console.log(data);
-  //   }catch(error)
-  //   {
-  //     console.log(error);
-  //   }
-  // })
+  useDispatch();
+  const dispatch = useDispatch();
+ useEffect(() => {
+  const fetchData = async () => {
+    const response= await dispatch(getOrphanages());
+  }
+  fetchData();
+ })
   return (
     <div className="app">
       <SideBar />
@@ -43,6 +43,7 @@ function App() {
           <Route path="form" element={<BlogForm />} />
         </Route>
         <Route path="/orphanage" element={<Orphanges />} />
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/about" element={<AboutUs />} />
         {/* Donate Button router */}
         <Route path="/donate" element={<Donate />} />
@@ -51,6 +52,7 @@ function App() {
         <Route path="/emergency" element={<Emergency />} />
         <Route path="/children" element={<Children />} />
         <Route path="/signup" element={<SignUp/>} />
+        <Route path="/create-orphanage" element={<OrphanageSignup/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

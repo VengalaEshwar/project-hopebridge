@@ -21,7 +21,8 @@
   justify-content: space-around;
 }
 .side-nav-icon {
-  display: none;
+  /* display: none; */
+  font-size: 2rem;
 }
 .navbar a {
   padding: 0.4rem 1rem;
@@ -61,7 +62,9 @@
   background-color: white;
   color: rgb(255, 0, 0);
 }
-
+.side-nav-button{
+  display: none;
+}
 /* responsive design */
 @media (max-width: 956px) {
   .navbar {
@@ -75,7 +78,9 @@
     padding: 0.3rem 1rem;
     display: none;
   }
-
+  .side-nav-button{
+    display: initial;
+  }
   .donate-button {
     margin-right: 0;
     padding: 0.3rem 1.5rem;

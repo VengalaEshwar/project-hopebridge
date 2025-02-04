@@ -1,0 +1,1 @@
+This is folder just for storing images temporarily automatically the image will be deleted after the completion of thr process

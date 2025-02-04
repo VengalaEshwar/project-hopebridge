@@ -88,16 +88,16 @@
     background-color: #edf3ed;
     margin : 1rem;
     display: flex;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0 0 5px 1px rgb(0, 0, 0,0.3);
     font-size : 1.2rem;
     padding : 1rem;
     flex-wrap :wrap;
 }
-.applicant-name,.child-id,.applicant-mail{
+/* .applicant-name,.child-id,.applicant-mail{
     flex-grow :1;
-}
+} */
 
 /* Transaction */
 .orphanage-transaction {
@@ -158,21 +158,23 @@
     .orphanage-application-layout{
         margin-top: 1rem;
     }
-    .application{
-        width : 99%;
-        min-height : 2rem;
-        background-color: #edf3ed;
-        margin : 1rem;
-        display: flex;
-        /* justify-content: space-around; */
-        align-items: center;
-        box-shadow: 0 0 5px 1px rgb(0, 0, 0,0.3);
-        font-size : 0.8rem;
-        padding : 1rem;
-        flex-wrap :wrap;
-    }
+   
+ .application{
+    width : 99%;
+    min-height : 2rem;
+    background-color: #edf3ed;
+    margin : 1rem;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    box-shadow: 0 0 5px 1px rgb(0, 0, 0,0.3);
+    font-size : 0.8rem;
+    padding : 1rem;
+    flex-wrap :wrap;
+}
     .applicant-name,.child-id,.applicant-mail{
         flex-grow :1;
     }
 
 }
+

@@ -4,7 +4,7 @@ const signupUser = async (req, res) => {
     const response = await createUser(req.body);
 
     if (!response.success){
-        return res.status(400).json(response);
+        return res.json(response);
     }
 
     return res.status(201).send({
@@ -14,7 +14,7 @@ const signupUser = async (req, res) => {
 
   } catch (error) {
 
-    return res.status(405).json({
+    return res.status(404).json({
       message: "error occurred at signup,try again",
       error,
       success : false
@@ -26,31 +26,31 @@ const loginUser = async (req, res) => {
   try {
     const response =  await authenticateUser(req.body);
     if(!response.success)
-        return res.status(401).send(response)
+        return res.send(response)
     res.cookie('JWT_TOKEN', response.JWT_TOKEN, {
-        httpOnly : true,
-        // secure: process.env.NODE_ENV === 'production', // Ensure it's sent only over HTTPS in production
-        maxAge: 3600000*24*7,  // Token expiration time (1 hour)
-        sameSite: 'strict',  // Mitigates CSRF attacks
-      });  
+      httpOnly: true,  
+      secure: false,  // Change to true in production (HTTPS)
+      maxAge: 3600000 * 24 * 7,  // 7 days
+      sameSite: 'lax'  // Use 'lax' instead of 'strict'
+    }); 
     return res.status(201).send(response);
   } catch (error) {
     console.log(error)
     return res.status(405).json({
       message: "error occurred at signup,try again",
       success : false,
-      error,
+      error : error.message,
     });
   }
 };
 const logoutUser = (req,res)=>{
     try{
-        res.cookie('JWT_TOKEN',"" ,{
-            httpOnly: true,  // Ensures it is not accessible via JavaScript
-            secure: process.env.NODE_ENV === 'production', // Ensure it's sent only over HTTPS in production
-            sameSite: 'strict',  // Mitigates CSRF attacks
-            expires: new Date(0),  // Expire the cookie immediately by setting the expiration date to the past
-          });
+      res.cookie('JWT_TOKEN',"", {
+        httpOnly: true,  
+        secure: false,  // Change to true in production (HTTPS)
+        maxAge: 0,  // 7 days
+        sameSite: 'lax'  // Use 'lax' instead of 'strict'
+      }); 
           return res.status(201).json({
             message : "logout success",
             success : true

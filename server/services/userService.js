@@ -3,6 +3,7 @@ const Orphanage = require("../schemas/orphanageSchema.js");
 const {JWT_SECRET_KEY} = require("../configs/serverConfig.js")
 const {generateToken} = require('../utils/jwt.js')
 const argon2 = require("argon2");
+const Gallery = require("../schemas/gallerySchema.js");
 const createUser = async (userDetails) => {
   try {
     const { email, phone, password } = userDetails;
@@ -16,7 +17,7 @@ const createUser = async (userDetails) => {
     });
     return {
       userData,
-      success : true
+      success : true,
     };
   } catch (error) {
     console.log(error);
@@ -37,13 +38,14 @@ const authenticateUser = async(userDetails)=>{
         }
         const token = generateToken(userData);
         return {
-            messsage : "login successfull",
+            message : "login successfull",
             JWT_TOKEN : token,
             userData :{
                name: user.name,
                 email,
                 phone,
-                role
+                role,
+                id : user._id
             },
             success : true
         }
@@ -52,7 +54,29 @@ const authenticateUser = async(userDetails)=>{
         throw new Error(error);
       }
 }
+const getUserById = async (id)=>{
+  try{
+    const user =await  User.findById(id);
+    return user;
+  }catch(e)
+  {
+    console.log(e);
+    throw new Error(e);
+  }
+}
+const getGalleryService = async ()=>{
+  try{
+    const gallery =await  Gallery.find();
+    return gallery;
+  }catch(e)
+  {
+    console.log(e);
+    throw new Error(e);
+  }
+}
 module.exports = {
   createUser,
   authenticateUser,
+  getUserById,
+  getGalleryService
 };

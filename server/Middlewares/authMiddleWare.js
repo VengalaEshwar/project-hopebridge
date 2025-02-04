@@ -1,15 +1,15 @@
 const express = require('express')
 const {verifyToken} = require("../utils/jwt");
 const isLogin= (req,res,next)=>{
-    const jwt_token = req.cookies["JWT_TOKEN"];
-    if(!jwt_token)
-    {
-        return res.status(401).json({
-            success : false,
-            message : "Unauthorised access please login"
-        });
-    }
     try{
+        const jwt_token = req.cookies["JWT_TOKEN"];
+        if(!jwt_token)
+            {
+                return res.status(401).json({
+                    success : false,
+                    message : "Unauthorised access please login"
+                });
+            }
         const isValid = verifyToken(jwt_token);
         if(!isValid)
         {
@@ -39,7 +39,16 @@ const isOrphanage = (req,res,next)=>{
         });
     next();
 }
+const isUser = (req,res,next)=>{
+    if(req.verifiedUser!=='user')
+        return res.status(401).json({
+            success : false,
+            message : "Unauthorised access to access the data"
+        });
+    next();
+}
 module.exports={
     isLogin,
-    isOrphanage
+    isOrphanage,
+    isUser
 }

@@ -4,6 +4,7 @@ import "../styles/Donation.css";
 import DonateFeatureCard from "../components/DonateFeatureCard";
 import Gallery from "../components/Gallery";
 import DonateForm from "../components/DonateForm";
+import { useSelector } from "react-redux";
 const donationOptions = [
   {
     title: "Donate: Orphanages Through HopeBridge",
@@ -24,9 +25,9 @@ const donationOptions = [
 ];
 
 function Donate() {
+  const [role,setRole] = useState(useSelector((state)=>state?.auth?.role));
   const navigate = useNavigate();
   const handleDonateClick = () => {
-    console.log("clicked donate button");
     setShowDonation(!showDonation);
   };
 
@@ -82,7 +83,7 @@ function Donate() {
         </span>
       </div>
       <div className="donate-feature-cards-section">
-        {donationOptions.map((data)=><DonateFeatureCard title={data.title} description={data.description}/>)}
+        {donationOptions.map((data,index)=><DonateFeatureCard key={index} title={data.title} description={data.description}/>)}
       </div>
 
       <div className="donate-child-button-container flex items-center justify-center">
@@ -90,11 +91,11 @@ function Donate() {
           <span className="text-3xl text-white px-10 max-md:text-lg">
             Raise your hands towards the needy
           </span>
-          <button onClick={handleDonateClick}>Donate</button>
+          {role!='orphanage' && <button onClick={handleDonateClick}>Donate</button>}
         </span>
       </div>
 
-      {showDonation && <DonateForm />}
+      {role=='user' && showDonation && <DonateForm />}
 
       <Gallery isDonor={true} />
       <div className="donate-footer text-center text-blue-600 text-7xl">

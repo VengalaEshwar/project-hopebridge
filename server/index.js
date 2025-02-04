@@ -12,14 +12,18 @@ const multer = require('multer');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const uploadIfExist = require('./Middlewares/multerMiddleware.js');
-const handleDonationToAllOrphanages = require('./utils/handleDonationToAllOrphanages.js')
+const handleDonationToAllOrphanages = require('./utils/handleDonationToAllOrphanages.js');
+const userRouter = require('./routes/userRouter.js');
 const upload = multer();   //use multer for form-data
 //app
 const app = express();
 
 //middlewares
-
-app.use(cors());
+// const FRONTEND_URL='http://localhost:5173/'
+app.use(cors({
+    origin: 'http://localhost:5173',  // Allow requests from your frontend
+    credentials: true  // Enable cookies
+  }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,12 +31,12 @@ app.use(express.text());
 // app.use(upload.none());
 //routers
 app.use("/auth",upload.none(),authRouter);
+app.use("/user",upload.none(),userRouter);
 app.use("/blogs",blogRouter);
 app.use("/orphanage",uploadIfExist,orphanageRouter);
 app.use("/child",uploadIfExist ,childRouter);
 app.use("/adopt",uploadIfExist ,adoptRouter);
 app.use("/donate",uploadIfExist,donateRouter);
-
 //starting the server
 app.listen(config.PORT,async ()=>{
     await connectDB();

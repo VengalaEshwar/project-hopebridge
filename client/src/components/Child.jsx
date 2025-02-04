@@ -1,60 +1,42 @@
 import React, { useState } from "react";
-
-// name: { type: String, required: true },
-// age: { type: Number, required: true },
-// gender: { type: String, enum: ["male", "female", "other"], required: true },
-// status: {
-//   type: String,
-//   enum: ["available", "adopted"],
-//   default: "available",
-// },
-// orphanage: { type: mongoose.Schema.Types.ObjectId, ref: "Orphanage" },
-// bio: { type: String, required: false },
-// photo: { type: String, required: false }, // URL for child photo
-// addedAt: { type: Date, default: Date.now },
-function Child() {
+const getAge = (dob) => {
+  const birthYear = new Date(dob).getFullYear();
+  const currentYear = new Date().getFullYear();
+  return currentYear - birthYear;
+}
+function Child({data}) {
   const [flag, setFlag] = useState(true);
   const handleClick = () => {
     setFlag(!flag);
   };
   return (
     <div className="child-card">
-      <img className="child-card-photo" src="images/child-1.jpg"></img>
+      <img className="child-card-photo" src={data?.imageURL}></img>
       <div className="child-details">
         <ul>
-          <li>Name : V.Eshwar</li>
+          <li>Name : {data?.name}</li>
           <hr />
-          <li>Age : 24</li>
+          <li>Age : {getAge(data?.dob)}</li>
           <hr />
-          <li>Gender : Male</li>
+          <li>Gender : {data?.gender}</li>
           <hr />
-          <li>DOB : 15/05/2004</li>
+          <li>DOB : {data?.dob.split("T")[0]}</li>
           <hr />
           {!flag ? (
             <>
               <li>location : hyderabad</li>
               <hr />
-              <li>Orphanage : hope bridge</li>
+              <li>Orphanage : coming soon...</li>
               <hr />
-              <li>Child Id : 12345</li>
+              <li>Child Id : {data._id}</li>
               <hr />
-              <li>Orphanage Id : 12234567</li>
+              <li>Orphanage Id : {data.orphanage}</li>
               <hr />
-              <li>updated at : 15/01/20225</li>
+              <li>updated at :  {data?.addedAt.split("T")[0]}</li>
               <hr />
               <li>
-                desscription : <br />
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                laboriosam beatae quis provident recusandae eligendi tenetur,
-                nesciunt odio dignissimos harum illum architecto mollitia
-                inventore qui ex amet labore, ipsum reiciendis laborum
-                consectetur reprehenderit quae unde. Impedit rerum voluptatem,
-                placeat debitis quisquam velit eos, maxime architecto facilis
-                dignissimos harum alias repellendus eaque beatae adipisci.
-                Suscipit nam deserunt illum voluptates magnam, saepe nobis
-                eaque, quod assumenda nostrum eum sapiente dolore dolorem maxime
-                vel eligendi incidunt architecto obcaecati doloribus corrupti
-                voluptatum quidem alias provident! Ullam velit aliquam commodi
+                description : <br />
+               {data?.description}
               </li>
               <button 
               className="bg-green-400 p-2 hover:bg-green-500 active:scale-95 w-60 rounded-md my-2 child-btn">adopt</button>

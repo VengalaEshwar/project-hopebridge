@@ -5,7 +5,6 @@ const upload = require("../Middlewares/multerMiddleware");
 const {deleteImage} = require("../utils/deleteImage");
 const createBlog = async (blogDetails)=>{
     try{
-        console.log(blogDetails);
         const imageURL = await  uploadToCloudinary(blogDetails.imagePath);
         const blogResponse = await Blog.create({
             title : blogDetails.title,
@@ -20,7 +19,6 @@ const createBlog = async (blogDetails)=>{
             { $push: { blogs : blogResponse._id } },
             { new: true } 
         );
-        console.log('blog  added successfully!');
         const imagePath = "./"+ blogDetails.imagePath;
         deleteImage(imagePath);
         return {
@@ -39,7 +37,7 @@ const readBlogs =async (req)=>{
     const curPage = req.params.page || 1;
     const skip = (curPage - 1) * 10;
     try{
-        const blogs = await Blog.find().skip(skip).limit(10);
+        const blogs = await Blog.find() //.skip(skip).limit(10);
         const totalCount = await Blog.countDocuments();
         const totalPages = Math.ceil(totalCount / 10);
         const pre = curPage > 1 && curPage-1<=totalPages;
@@ -57,9 +55,22 @@ const readBlogs =async (req)=>{
         return new Error(error);
     }
 }
+const getBlogByID =async (id)=>{
+    try{
+        const blog = await Blog.findById(id);
+        const response ={
+            success : true,
+            blog
+        }
+        return response;
+    }
+    catch(error){
+        console.log(error);
+        return new Error(error);
+    }
+}
 const updateBlog = async (blogDetails)=>{
     try{
-        console.log(blogDetails);
         const blog = await Blog.findById(blogDetails._id);
         if(blogDetails.imagePath)
         {
@@ -77,7 +88,6 @@ const updateBlog = async (blogDetails)=>{
             blogDetails={...blogDetails,tags:blogDetails.tags.split(" ")}
         }
         const blogResponse = await Blog.findByIdAndUpdate(blogDetails._id,{$set : blogDetails },{new : true});
-        console.log('blog  added successfully!');
         return {
             success : true,
             blogResponse,
@@ -143,5 +153,6 @@ module.exports={
     createBlog,
     readBlogs,
     updateBlog,
-    deleteBlog
+    deleteBlog,
+    getBlogByID
 }

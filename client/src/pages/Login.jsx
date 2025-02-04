@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "../styles/Login.css"; // Include the CSS file
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login ,logout} from "../redux/slices/authSlice";
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    role : "",
+    role : "user",
   });
 
   const handleChange = (e) => {
@@ -18,14 +22,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(JSON.stringify(formData));
-    // alert("Login submitted");
-    // try {
-    //   const response = await axios.post("#", formData);
-    //   alert("Login successful: " + response.data.message);
-    // } catch (error) {
-    //   alert("Login failed: " + error.response.data.error);
-    // }
+    try {
+      const response = await dispatch(login(formData));
+      if(response?.payload?.data?.success)
+        navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -66,12 +69,12 @@ const Login = () => {
             onChange={handleChange}
             required
           >
-            <option value="donor">Donor</option>
-            <option value="orphanage">orphanage</option>
+            <option value="user">User</option>
+            <option value="orphanage">Orphanage</option>
           </select>
         </div>
           <button type="submit" className="login-button">Login</button>
-          <p>create new account <Link className="text-blue-700" to="/signup">sign up</Link></p>
+          <p>create new account<Link className="text-blue-700" to="/signup">sign up</Link></p>
         </form>
       </div>
     </div>
