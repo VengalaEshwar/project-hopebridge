@@ -1,5 +1,4 @@
-const cloudinary = require('../utils/cloudinary').default;
-const { uploadToCloudinary, removeFromCloudinary } = cloudinary;
+const { uploadToCloudinary,removeFromCloudinary} = require('../utils/cloudinary');
 const Blog = require('../schemas/Blog.js');
 const User = require('../schemas/user');
 const upload = require("../Middlewares/multerMiddleware");
