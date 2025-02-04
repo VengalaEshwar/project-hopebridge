@@ -1,6 +1,6 @@
 const { uploadToCloudinary,removeFromCloudinary} = require('../utils/cloudinary');
 const User = require('../schemas/user');
-const Blog = require('../schemas/Blog.js');
+const Blog = require('../schemas/blog.js');
 const upload = require("../Middlewares/multerMiddleware");
 const {deleteImage} = require("../utils/deleteImage");
 const createBlog = async (blogDetails)=>{
