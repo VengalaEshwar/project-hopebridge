@@ -7,7 +7,7 @@ import OrphanageApplications from "../components/OrphanageApplications";
 import OrphanageTransaction from "../components/OrphanageTransaction";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../redux/slices/userSlice";
-import UserBlogs from "../components/UserBLogs";
+import UserBlogs from "../components/UserBlogs";
 import UserDonations  from "../components/userDonations";
 import UserApplications from "../components/userApplications";
 import { logout } from "../redux/slices/authSlice";
