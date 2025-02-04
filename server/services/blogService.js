@@ -1,4 +1,5 @@
-const { uploadToCloudinary,removeFromCloudinary} = require('../utils/cloudinary');
+const cloudinary = require('../utils/cloudinary').default;
+const { uploadToCloudinary, removeFromCloudinary } = cloudinary;
 const Blog = require('../schemas/Blog.js');
 const User = require('../schemas/user');
 const upload = require("../Middlewares/multerMiddleware");
@@ -33,6 +34,14 @@ const createBlog = async (blogDetails)=>{
         throw new Error(error);
     }
 }
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * @description reads all the blogs from database and also provides the metadata of next and previous page
+ * @param {Object} req - request object
+ * @param {String} req.params.page - page number to read the blogs from
+ * @returns {Object} - response object containing blogs, pre and next metadata
+ */
+/******  053d8f7e-bf3f-4e9f-91b9-742efe8d9980  *******/
 const readBlogs =async (req)=>{
     const curPage = req.params.page || 1;
     const skip = (curPage - 1) * 10;
