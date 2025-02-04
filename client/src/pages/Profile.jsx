@@ -8,8 +8,8 @@ import OrphanageTransaction from "../components/OrphanageTransaction";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../redux/slices/userSlice";
 import UserBlogs from "../components/UserBlogs";
-import UserDonations  from "../components/userDonations";
-import UserApplications from "../components/userApplications";
+import UserDonations  from "../components/UserDonations";
+import UserApplications from "../components/UserApplications";
 import { logout } from "../redux/slices/authSlice";
 import toast from "react-hot-toast";
 function ProfilePage() {
