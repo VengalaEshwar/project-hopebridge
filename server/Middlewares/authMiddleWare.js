@@ -5,6 +5,7 @@ const isLogin= (req,res,next)=>{
         const jwt_token = req.cookies["JWT_TOKEN"];
         if(!jwt_token)
             {
+                console.log(req.cookies)
                 console.log("not logged in");
                 return res.json({
                     success : false,
