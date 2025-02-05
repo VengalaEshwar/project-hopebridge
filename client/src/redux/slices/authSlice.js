@@ -36,9 +36,7 @@ const signUp = createAsyncThunk("auth/signup", async (data, thunkAPI) => {
 
 const login = createAsyncThunk("auth/login", async (data) => {
   try {
-    const tempResponse = axiosInstance.post("/auth/login", data, {
-      withCredentials: true,
-    });
+    const tempResponse = axiosInstance.post("/auth/login", data);
     toast.promise(
       tempResponse.then((res) =>{
         if(res?.data?.success)

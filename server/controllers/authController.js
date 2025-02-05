@@ -28,10 +28,10 @@ const loginUser = async (req, res) => {
     if(!response.success)
         return res.send(response)
     res.cookie('JWT_TOKEN', response.JWT_TOKEN, {
-      httpOnly: true,  
-      secure: false,  // Change to true in production (HTTPS)
-      maxAge: 3600000 * 24 * 7,  // 7 days
-      sameSite: 'lax'  // Use 'lax' instead of 'strict'
+      httpOnly: true, // Prevents JavaScript access (security)
+      secure: process.env.NODE_ENV === "production", // Secure cookies in production
+      sameSite: "None", // Required for cross-origin requests
+      path: "/",
     }); 
     return res.status(201).send(response);
   } catch (error) {
