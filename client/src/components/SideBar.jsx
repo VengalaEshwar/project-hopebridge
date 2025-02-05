@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate ,Link} from "react-router-dom";
 import "../styles/SideBar.css"
 import { logout } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 function SideBar() {
   const dispatch = useDispatch(); 
   const navigate = useNavigate();
-  const handleLogout = (e) => {
+    const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout()); // ✅ Dispatch first
     navigate("/");      // ✅ Navigate after state update
@@ -25,9 +25,9 @@ function SideBar() {
       <NavLink to="/adopt" className="md:hidden" onClick={handleSideNav}>adopt</NavLink>
       <NavLink to="/about" className="md:hidden" onClick={handleSideNav}>about</NavLink>
       <NavLink to="/blogs" className="md:hidden" onClick={handleSideNav}>blogs</NavLink>
-      <NavLink to="/orphanage" className="md:hidden" onClick={handleSideNav}>orphanage</NavLink>
-      {isLoggin && <NavLink to="/profile" className="md:hidden" onClick={handleSideNav}>profile</NavLink>}
-      <NavLink to="/"  className="md:hidden" onClick={handleLogout} >Log Out</NavLink> 
+      {isLoggin && role=='orphanage' &&<NavLink to="/orphanage" className="md:hidden" onClick={handleSideNav}>orphanage</NavLink>}
+      {isLoggin && role=='user'&&<NavLink to="/profile" className="md:hidden" onClick={handleSideNav}>profile</NavLink>}
+      {isLoggin ? <Link to="/"  onClick={handleLogout}> log out</Link>: <Link to="/login" > login</Link>} 
     </div>
   );
 }
