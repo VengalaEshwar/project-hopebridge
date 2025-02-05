@@ -32,8 +32,8 @@ app.use(express.json());
 app.use(express.text());
 // app.use(upload.none());
 //routers
-app.use("/auth",upload.none(),authRouter);
-app.use("/user",upload.none(),userRouter);
+app.use("/auth",uploadIfExist,authRouter);
+app.use("/user",uploadIfExist,userRouter);
 app.use("/blogs",blogRouter);
 app.use("/orphanage",uploadIfExist,orphanageRouter);
 app.use("/child",uploadIfExist ,childRouter);

@@ -9,7 +9,7 @@ const postBlog = async (req, res) => {
   try {
     const blog = await createBlog(req.body);
     if (!blog.success) {
-      return res.status(401).json(blog);
+      return res.json(blog);
     }
     return res.status(201).json(blog);
   } catch (error) {

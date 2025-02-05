@@ -12,8 +12,21 @@ const Signup = () => {
     password: "",
     phone: "",
     role: "donor",
+    image: null,
   });
-
+  const [imageURL, setImageURL] = useState("");
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFormData({ ...formData, image: file });
+      setImageURL(URL.createObjectURL(file));
+    }
+    else
+    {
+        toast.error("Please select an image.");
+        return;
+    }
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -64,7 +77,11 @@ const Signup = () => {
             required
           />
         </div>
-
+        <div className="form-group">
+            <label htmlFor="image">Upload your Image</label>
+            <input type="file" id="image" accept="image/*" onChange={handleFileChange} required />
+            {imageURL && <img src={imageURL} alt="Preview" className="preview-image" />}
+          </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input

@@ -21,7 +21,8 @@ const uploadIfExist = (req, res, next) => {
     upload.single('image')(req, res, (err) => {
       if (err) {
         // Handle Multer errors
-        return res.status(400).json({ success: false, message: 'File upload error', error: err.message });
+        console.log("error in uploading the image")
+        return res.json({ success: false, message: 'File upload error', error: err.message });
       }
       next(); // Proceed if the file was handled
     });
@@ -29,7 +30,8 @@ const uploadIfExist = (req, res, next) => {
     // Parse non-file fields
     upload.none()(req, res, (err) => {
       if (err) {
-        return res.status(400).json({ success: false, message: 'Form data parsing error', error: err.message });
+        console.log("error in uploading the image")
+        return res.json({ success: false, message: 'Form data parsing error', error: err.message });
       }
       next(); // Proceed if no file and no error
     });

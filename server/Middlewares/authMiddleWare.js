@@ -5,7 +5,8 @@ const isLogin= (req,res,next)=>{
         const jwt_token = req.cookies["JWT_TOKEN"];
         if(!jwt_token)
             {
-                return res.status(401).json({
+                console.log("not logged in");
+                return res.json({
                     success : false,
                     message : "Unauthorised access please login"
                 });
@@ -13,7 +14,8 @@ const isLogin= (req,res,next)=>{
         const isValid = verifyToken(jwt_token);
         if(!isValid)
         {
-            return res.status(401).json({
+            console.log("not valid token");
+            return res.json({
                 success : false,
                 message : "Token is not valid,please login to continue"
             })

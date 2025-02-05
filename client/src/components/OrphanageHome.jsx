@@ -6,7 +6,7 @@ function OrphanageHome() {
   return (
     <div className="orphange-home-layout">
       <div className="orphange-home-layout-left">
-        <img src={orphanage.imageURL || "images/child-1.jpg"} alt="" />
+        <img src={orphanage?.imageURL || "images/child-1.jpg"} alt="" />
       </div>
       <div className="orphange-home-layout-right">
         <ul>

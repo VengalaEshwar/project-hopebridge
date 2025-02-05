@@ -33,7 +33,7 @@ const editOrphanage = async (req,res)=>{
     try{
         const orphanage = await updateOrphanage(req.body);
         if(!orphanage.success)
-            return res.status(401).json(orphanage)
+            return res.json(orphanage)
         return res.status(201).json(orphanage);
     }catch(error)
     {
@@ -48,7 +48,7 @@ const addPhoto = async (req,res)=>{
     try{
         const photo = await postPhoto(req.body);
         if(!photo.success)
-            return res.status(401).json(photo)
+            return res.json(photo)
         return res.status(201).json(photo);
     }catch(error)
     {
@@ -63,7 +63,7 @@ const getPhoto = async (req,res)=>{
     try{
         const photo = await getbyIdPhoto(req.params.id);
         if(!photo.success)
-            return res.status(401).json(photo)
+            return res.json(photo)
         return res.status(201).json(photo);
     }catch(error)
     {
@@ -78,7 +78,7 @@ const getAllOrphanages = async (req,res)=>{
     try{
         const orphanages = await getAllOrphanageIdsAndNames();
         if(!orphanages.success)
-            return res.status(401).json(orphanages)
+            return res.json(orphanages)
         return res.status(201).json(orphanages);
     }catch(error)
     {
