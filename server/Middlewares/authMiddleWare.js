@@ -3,9 +3,9 @@ const {verifyToken} = require("../utils/jwt");
 const isLogin= (req,res,next)=>{
     try{
         const jwt_token = req.cookies["JWT_TOKEN"];
+        console.log(req.cookies)
         if(!jwt_token)
             {
-                console.log(req.cookies)
                 console.log("not logged in");
                 return res.json({
                     success : false,
