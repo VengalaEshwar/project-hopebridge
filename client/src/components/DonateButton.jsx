@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
+import { setSide } from '../redux/slices/authSlice';
 
 function DonateButton() {
-  const [side,setSide]= useState(false);
+  const dispatch = useDispatch();
   const handleSideNav = ()=>{
-   const sideNav= document.getElementsByClassName("side-bar")[0];
-    setSide(!side);
-   sideNav.style.display=side?"none":"flex";
+    dispatch(setSide());
   }
     const navigate = useNavigate();
   return (

@@ -38,6 +38,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      
       const response = await dispatch(signUp(formData));
       if(response.payload.data.success)
       {

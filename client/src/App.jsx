@@ -21,9 +21,10 @@ import Profile from "./pages/Profile";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrphanages } from "./redux/slices/orphanagesSlice";
 import OrphanageSignup from "./pages/OrphanageSignup";
+import { setSideDefault } from "./redux/slices/authSlice";
 //import styled from 'styled-components'; //used for styling components using css in js
 function App() {
-  useDispatch();
+  const side = useSelector((state) => state.auth.side);
   const dispatch = useDispatch();
  useEffect(() => {
   const fetchData = async () => {
@@ -31,9 +32,10 @@ function App() {
   }
   fetchData();
  })
+ 
   return (
     <div className="app">
-      <SideBar />
+      {side && <SideBar />}
       <NavBar />
       <Routes>
         {/* main pages  on navbar*/}

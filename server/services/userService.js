@@ -4,6 +4,8 @@ const {JWT_SECRET_KEY} = require("../configs/serverConfig.js")
 const {generateToken} = require('../utils/jwt.js')
 const argon2 = require("argon2");
 const Gallery = require("../schemas/gallerySchema.js");
+const { uploadToCloudinary } = require("../utils/cloudinary.js");
+const { deleteImage } = require("../utils/deleteImage.js");
 const createUser = async (userDetails) => {
   try {
     const { email, phone, password } = userDetails;
@@ -11,10 +13,16 @@ const createUser = async (userDetails) => {
     if (isExist) return { message: "user already exist please login",success : false };
 
     const encryPass = await argon2.hash(password);
+    userDetails.imageURL = await  uploadToCloudinary(userDetails?.imagePath);
     const userData = await User.create({
       ...userDetails,
       password: encryPass,
     });
+    if(userDetails?.imagePath!=null)
+      {
+        deleteImage(userDetails.imagePath);
+        userDetails.imagePath=null;
+      }
     return {
       userData,
       success : true,

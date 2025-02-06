@@ -7,12 +7,13 @@ const initialState = {
   isLoggin: localStorage.getItem("isLoggin") === "true" || false,
   role: JSON.parse(localStorage.getItem("data"))?.role,
   data: JSON.parse(localStorage.getItem("data")),
+  side:false
 };
 const cookies = new Cookies();
 const signUp = createAsyncThunk("auth/signup", async (data, thunkAPI) => {
   try {
     const response = axiosInstance.post("/auth/signup", data, {
-      withCredentials: true,
+      headers: { "Content-Type": "multipart/form-data" }
     });
     await toast.promise(
       response.then((res) => {
@@ -102,6 +103,12 @@ export const authSlice = createSlice({
         toast.error("you are logged out");
       }
     },
+    setSide : (state)=>{
+      state.side = !state.side
+    },
+    setSideDefault :(state)=>{
+      state.side=false
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
@@ -129,5 +136,5 @@ export const authSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export { signUp, login, signUpOrphanage };
-export const { logout } = authSlice.actions;
+export const { logout ,setSide,setSideDefault} = authSlice.actions;
 export default authSlice.reducer;
